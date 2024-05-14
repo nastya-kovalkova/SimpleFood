@@ -34,10 +34,11 @@
     transition: box-shadow 0.3s linear, padding 0.3s linear;
 
     &--mini {
-      padding: 30px;
-      box-shadow: 0px 0px 20px 5px $accent-color;
-      background-color: $page-color;
-      backdrop-filter: blur(10px);
+      padding: 20px;
+      box-shadow: 0px 0px 30px 10px rgba(255, 104, 56, 0.5);
+      box-shadow: 0px 0px 20px 5px rgba(255, 104, 56, 0.5);
+      background-color: rgba(249, 250, 255, 0.5);
+      backdrop-filter: blur(20px);
     }
   }
 }
@@ -131,10 +132,6 @@
   }
 }
 
-.main {
-  flex-grow: 1;
-}
-
 .hero {
   &__inner {
     display: flex;
@@ -186,6 +183,171 @@
     &:focus {
       text-decoration: transparent;
     }
+
+    &:active {
+      color: $main-color;
+    }
+  }
+}
+
+.popular {
+  &__title {
+    margin-bottom: 60px;
+  }
+
+  &__category-list {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 45px;
+  }
+
+  &__category-use {
+    fill: $main-color;
+    transition: fill 0.4s linear;
+  }
+
+  &__category-btn,
+  &__content-link {
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px $decor-color-2;
+    background-color: $btn-inner-color;
+  }
+
+  &__category-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 32px;
+    font-size: 20px;
+    line-height: 1.3;
+    color: $main-color;
+    transition: color 0.3s linear, background-color 0.3s linear,
+      box-shadow 0.3s linear;
+
+    &.mixitup-control-active {
+      color: $btn-inner-color;
+      background-color: $accent-color;
+      box-shadow: transparent;
+
+      .popular__category-use {
+        fill: $btn-inner-color;
+      }
+    }
+    &:hover {
+      color: $accent-color;
+      background-color: $action-bg-color;
+      box-shadow: $box-shadow;
+
+      .popular__category-use {
+        fill: $accent-color;
+      }
+    }
+
+    &:focus {
+      box-shadow: $box-shadow;
+    }
+
+    &:active {
+      color: $main-color;
+      background-color: $btn-inner-color;
+      box-shadow: inset 0 -5px 12px 0 rgba(255, 104, 56, 0.2);
+
+      .popular__category-use {
+        fill: $main-color;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 60px;
+
+    //-------------------------------------------------------------<
+    // &-item {
+    //   width: 210px;
+    //  padding: 20px 15px;
+    // }
+
+    // &-img {
+    //   width: 140px;
+    //   height: 140px;
+    //   margin-bottom: 10px;
+    //   object-fit: cover;
+    // }
+
+    // &-name {
+    //   font-weight: 400;
+    //   font-size: 15px;
+    //   line-height: normal;
+    //   text-align: center;
+    // }
+
+    // нельзя так писать? А то писала миллион раз слово контент=)
+    //-----------------------------------------------------------<
+  }
+
+  &__content-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 210px;
+    height: 100%;
+    padding: 20px 15px;
+    transition: box-shadow 0.3s linear;
+
+    &:hover {
+      box-shadow: 0 0 0 1px $accent-color;
+    }
+  }
+
+  &__content-img {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 10px;
+    object-fit: cover;
+  }
+
+  &__content-name {
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: normal;
+    text-align: center;
+  }
+
+  &__content-price {
+    margin-top: auto;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.4;
+    color: $main-color;
+  }
+
+  &__content-btn {
+    padding: 7px 16px;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  &__btn {
+    display: block;
+    margin: 0 auto;
+    color: $main-color;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: transparent;
+    }
+
+    &:active {
+      color: $main-color;
+    }
   }
 }
 
@@ -214,13 +376,13 @@
     padding: 12px 14px;
     margin-bottom: 12px;
     font-size: 14px;
-    border: 1px solid $decor-color;
+    border: 1px solid $decor-color-1;
     @extend %style-focus;
     transition: border-color 0.3s linear, border 0.3s linear,
       box-shadow 0.3s linear;
 
     &::placeholder {
-      color: $decor-color;
+      color: $decor-color-1;
       transition: color 0.3s linear;
     }
 
@@ -229,7 +391,7 @@
     }
 
     &:hover {
-      border: 1px solid $decor-color;
+      border: 1px solid $decor-color-1;
 
       &::placeholder {
         color: $main-color;
@@ -320,7 +482,7 @@
     width: 39px;
     height: 39px;
     border-radius: 50%;
-    background-color: $bg-color;
+    background-color: $decor-color-2;
     transition: background-color 0.3s linear, box-shadow 0.3s linear,
       fill 0.4s linear;
 
@@ -349,7 +511,7 @@
   }
 
   &__bottom {
-    border-top: 1px solid $decor-color;
+    border-top: 1px solid $decor-color-1;
   }
 
   &__copy {
