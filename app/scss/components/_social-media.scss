@@ -1,0 +1,44 @@
+.social-media {
+  display: flex;
+
+  &__item:not(:last-child) {
+    margin-right: 13px;
+  }
+
+  &__icon {
+    transition: fill 0.3s linear;
+
+    &--facebook {
+      width: 10px;
+      height: 21px;
+    }
+
+    &--twitter {
+      width: 21px;
+      height: 17px;
+    }
+
+    &--instagram {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__link {
+    @extend %flex-center;
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    background-color: $decor-color-2;
+    transition: background-color 0.3s linear, box-shadow 0.3s linear;
+
+    &:active {
+      box-shadow: none;
+      background-color: $action-color-2;
+
+      .social-media__icon {
+        fill: $fill-color;
+      }
+    }
+  }
+}

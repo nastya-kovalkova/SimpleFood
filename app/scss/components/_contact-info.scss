@@ -1,0 +1,25 @@
+.contact-info {
+  &__item {
+    margin-bottom: 15px;
+  }
+
+  &__link {
+    display: block;
+    padding-left: 31px;
+    font-size: 16px;
+    line-height: 2;
+    @include bg-image(24px 24px, left center);
+
+    &--address {
+      background-image: url("../images/icons/location-icon.svg");
+    }
+
+    &--tel {
+      background-image: url("../images/icons/phone-icon.svg");
+    }
+
+    &--email {
+      background-image: url("../images/icons/email-icon.svg");
+    }
+  }
+}

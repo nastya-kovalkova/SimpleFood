@@ -1,0 +1,21 @@
+.menu {
+  @extend %flex-between;
+
+  &__list {
+    display: flex;
+    gap: 45px;
+    margin: 0 63px 0 auto;
+  }
+
+  &__link {
+    display: block;
+    font-size: 18px;
+    line-height: normal;
+
+    &--active {
+      color: $accent-color;
+    }
+  }
+}
+
+@import "actions";

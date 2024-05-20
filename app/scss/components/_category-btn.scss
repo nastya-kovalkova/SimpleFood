@@ -1,0 +1,61 @@
+.category-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 32px 22px 86px;
+  font-size: 20px;
+  line-height: 1.3;
+  color: $main-color;
+  @extend %decor-border-bg;
+  transition: color 0.3s linear, background-color 0.3s linear,
+    box-shadow 0.3s linear;
+
+  &:active {
+    color: $main-color;
+    background-color: $btn-inner-color;
+    box-shadow: inset 0 -5px 12px 0 rgba(255, 104, 56, 0.2);
+  }
+
+  &__icon {
+    position: absolute;
+    left: 32px;
+    width: 44px;
+    height: 44px;
+    @include bg-image(contain);
+    filter: invert(22%) sepia(7%) saturate(2817%) hue-rotate(198deg)
+      brightness(87%) contrast(89%);
+    transition: filter 0.3s ease-in-out;
+
+    &--burgers {
+      background-image: url("../images/sprite.svg#burger-icon");
+    }
+
+    &--pizza {
+      background-image: url("../images/sprite.svg#pizza-icon");
+    }
+
+    &--sandwiches {
+      background-image: url("../images/sprite.svg#sandwich-icon");
+    }
+
+    &--asian-food {
+      background-image: url("../images/sprite.svg#asian-icon");
+    }
+
+    &--sets {
+      background-image: url("../images/sprite.svg#sets-icon");
+    }
+  }
+}
+
+.mixitup-control-active {
+  color: $btn-inner-color;
+  background-color: $accent-color;
+  box-shadow: transparent;
+
+  .category-btn__icon {
+    filter: invert(100%) sepia(8%) saturate(7488%) hue-rotate(261deg)
+      brightness(112%) contrast(107%);
+  }
+}

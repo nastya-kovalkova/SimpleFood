@@ -1,0 +1,87 @@
+.default-btn {
+  &:focus {
+    color: $accent-color;
+    background-color: $action-color;
+  }
+}
+
+.actions {
+  &__btn {
+    &:focus {
+      background-color: $action-color;
+    }
+  }
+}
+
+.hero {
+  &__link-details {
+    &:focus {
+      text-decoration: transparent;
+    }
+  }
+}
+
+.popular {
+  &__btn {
+    &:focus {
+      text-decoration: transparent;
+    }
+  }
+}
+
+.category-btn {
+  &:focus {
+    box-shadow: $box-shadow;
+  }
+}
+
+.restaurant-card {
+  &__link {
+    &:focus {
+      .restaurant-card__link-icon {
+        fill: $accent-color;
+      }
+    }
+  }
+}
+
+.reviews {
+  &__btn {
+    &:focus {
+      box-shadow: $box-shadow;
+    }
+  }
+
+  &__slider-dots {
+    button {
+      &:focus {
+        box-shadow: $shadow-size $accent-color;
+      }
+    }
+  }
+}
+
+.subscrip-form {
+  &__input {
+    &:focus {
+      border-color: transparent;
+    }
+  }
+
+  &__btn {
+    &:focus {
+      .subscrip-form__btn-icon {
+        fill: $accent-color;
+      }
+    }
+  }
+}
+
+.social-media {
+  &__link {
+    &:focus {
+      box-shadow: $box-shadow;
+      background-color: $action-color-2;
+    }
+  }
+}

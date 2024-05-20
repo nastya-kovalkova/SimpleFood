@@ -1,0 +1,83 @@
+.info {
+  &__inner {
+    @extend %flex-center;
+    margin: 0 auto;
+  }
+
+  &__decor {
+    width: 100%;
+    height: 585px;
+    max-width: 440px;
+    background-image: url("../images/content/food-delivery.png");
+    @include bg-image(contain);
+    margin-right: 120px;
+  }
+
+  &__content {
+    max-width: 470px;
+  }
+
+  &__title,
+  &__text {
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    text-align: left;
+  }
+
+  &__text {
+    opacity: 0.9;
+  }
+
+  &__benefits {
+    margin-bottom: 30px;
+  }
+
+  &__benefits-item {
+    position: relative;
+    padding-left: 64px;
+    font-size: 24px;
+    color: $main-color;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    &::before {
+      @include pseudo;
+      left: 0;
+      width: 34px;
+      height: 34px;
+      @include bg-image(contain, left center);
+    }
+
+    &--delivery {
+      &::before {
+        background-image: url("../images/sprite.svg#delivery-icon");
+        filter: invert(48%) sepia(78%) saturate(1926%) hue-rotate(337deg)
+          brightness(103%) contrast(101%);
+      }
+    }
+
+    &--courier {
+      &::before {
+        background-image: url("../images/sprite.svg#courier-icon");
+        filter: invert(56%) sepia(95%) saturate(3329%) hue-rotate(171deg)
+          brightness(102%) contrast(100%);
+      }
+    }
+
+    &--restaurant {
+      &::before {
+        background-image: url("../images/sprite.svg#restaurant-icon");
+        filter: invert(22%) sepia(78%) saturate(5387%) hue-rotate(8deg)
+          brightness(103%) contrast(111%);
+      }
+    }
+  }
+
+  &__benefits-link {
+    display: inline-block;
+  }
+}
