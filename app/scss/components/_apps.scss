@@ -1,0 +1,43 @@
+.apps {
+  &__inner {
+    @extend %flex-between;
+  }
+
+  &__decor {
+    width: 100%;
+    height: 380px;
+    max-width: 570px;
+    background-image: url("../images/content/bg-app.jpg");
+    @include bg-image(cover, left center);
+  }
+
+  &__content {
+    max-width: 540px;
+    margin-right: 20px;
+  }
+
+  &__title {
+    text-align: left;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+  }
+
+  &__list {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__img {
+    height: 40px;
+
+    &--app-store {
+      width: 120px;
+    }
+
+    &--google-play {
+      width: 140px;
+    }
+  }
+}

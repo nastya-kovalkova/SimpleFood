@@ -1,20 +1,26 @@
 $main-color: #363853;
 $accent-color: #ff6838;
 $text-color: #31352b;
+$fill-color: #ff7a50;
 $decor-color-1: #c2c2c2;
 $decor-color-2: #ececec;
 $btn-inner-color: #ffffff;
 $page-color: #f9faff;
-$main-font: "Rubik", sans-serif;
-$box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
-$action-bg-color: rgba(255, 122, 80, 0.1);
+$main-font: "Rubik";
+$shadow-size: 0 0 0 2px;
+$box-shadow: $shadow-size rgba($accent-color, 0.7);
+$action-color: rgba(#ff7a50, 0.1);
+$action-color-2: #fff2ed;
+$action-color-3: #ffae94;
+$breakpoints: (
+  "phone": 560px,
+  "tablet": 768px,
+  "tablet-2": 992px,
+  "desktop": 1230px,
+);
 
 %style-hover-focus {
   border-radius: 5px;
-
-  &:hover {
-    color: $accent-color;
-  }
 
   &:focus {
     box-shadow: $box-shadow;
@@ -27,4 +33,24 @@ $action-bg-color: rgba(255, 122, 80, 0.1);
   &:focus {
     box-shadow: $box-shadow;
   }
+}
+
+%flex-between,
+%flex-center {
+  display: flex;
+  align-items: center;
+}
+
+%flex-between {
+  justify-content: space-between;
+}
+
+%flex-center {
+  justify-content: center;
+}
+
+%decor-border-bg {
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px $decor-color-2;
+  background-color: $btn-inner-color;
 }

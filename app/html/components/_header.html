@@ -1,0 +1,47 @@
+<header class="header">
+  <div class="header__inner">
+    <div class="container">
+      <nav class="menu">
+        @include("parts/_logo.html", {
+          "elemClass": ""
+        })
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a class="menu__link @menuIndex link-status" href="#">Главная</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link @menuFood link-status" href="#">Блюда</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link link-status" href="#">Контакты</a>
+          </li>
+        </ul>
+        <ul class="actions">
+          <li class="actions__item">
+            <button class="actions__btn" type="button" aria-label="Поиск">
+              <svg class="actions__icon">
+                <use
+                  xlink:href="images/sprite.svg#search-icon"
+                ></use>
+              </svg>
+            </button>
+          </li>
+          <li class="actions__item">
+            <button
+              class="actions__btn"
+              type="button"
+              aria-label="Корзина, количество товаров - @goodsNumber"
+            >
+              <svg class="actions__icon">
+                <use
+                  xlink:href="images/sprite.svg#cart-icon"
+                ></use>
+              </svg>
+              <span class="actions__counter">@goodsNumber</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

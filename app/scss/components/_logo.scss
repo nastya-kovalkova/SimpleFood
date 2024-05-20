@@ -1,0 +1,8 @@
+.logo {
+  @extend %style-focus;
+  transition: box-shadow 0.3s linear, opacity 0.3s linear;
+
+  &:active {
+    opacity: 0.5;
+  }
+}

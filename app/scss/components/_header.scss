@@ -1,0 +1,24 @@
+.header {
+  padding-top: 159px;
+
+  &__inner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    padding: 57px 0;
+    transition: box-shadow 0.3s linear, padding 0.3s linear;
+
+    &--mini {
+      padding: 20px;
+      box-shadow: 0 0 20px 5px rgba($accent-color, 0.5);
+      background-color: rgba(249, 250, 255, 0.5);
+      backdrop-filter: blur(20px);
+    }
+  }
+}
+
+@import "components/logo";
+
+@import "components/menu";

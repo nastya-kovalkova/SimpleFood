@@ -1,0 +1,48 @@
+.hero {
+  margin-bottom: 60px;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 156px 0;
+    @include bg-image(560px 660px, right top);
+  }
+
+  &__title {
+    max-width: 450px;
+    font-size: 66px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $main-color;
+  }
+
+  &__title-style {
+    display: block;
+    color: $accent-color;
+  }
+
+  &__text {
+    max-width: 450px;
+    margin-bottom: 20px;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link-order {
+    margin-right: 34px;
+  }
+
+  &__link-details {
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: $main-color;
+
+    &:active {
+      color: $main-color;
+    }
+  }
+}

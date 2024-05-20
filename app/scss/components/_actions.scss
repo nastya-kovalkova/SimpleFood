@@ -1,0 +1,50 @@
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__btn {
+    @extend %style-focus;
+    position: relative;
+    padding: 13px;
+    transition: background-color 0.3s linear, box-shadow 0.3s linear;
+
+    &:active {
+      background-color: $action-color;
+      box-shadow: none;
+
+      .actions__icon {
+        stroke: $main-color;
+      }
+
+      .actions__counter {
+        color: $btn-inner-color;
+        stroke: $btn-inner-color;
+        background-color: $accent-color;
+      }
+    }
+  }
+
+  &__icon {
+    display: block;
+    height: 19px;
+    width: 19px;
+    fill: none;
+    stroke: $main-color;
+    transition: stroke 0.3s linear;
+  }
+
+  &__counter {
+    position: absolute;
+    left: 25px;
+    top: 8px;
+    padding: 1px 4px;
+    font-size: 10px;
+    line-height: normal;
+    color: $btn-inner-color;
+    background-color: $accent-color;
+    border-radius: 10px;
+    transition: stroke 0.3s linear, background-color 0.3s linear,
+      color 0.3s linear;
+  }
+}
