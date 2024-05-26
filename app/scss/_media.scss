@@ -5,10 +5,21 @@
     }
   }
 
+  .details-btn {
+    &:hover {
+      text-decoration: underline transparent;
+    }
+  }
+
   .default-btn {
     &:hover {
       box-shadow: $box-shadow, 0 5px 12px 0 rgba($accent-color, 0.2);
       background-color: transparent;
+
+      &::before {
+        filter: invert(57%) sepia(56%) saturate(4254%) hue-rotate(337deg)
+          brightness(102%) contrast(101%);
+      }
     }
   }
 
@@ -35,31 +46,23 @@
     }
   }
 
-  .hero {
-    &__link-details {
+  .popular {
+    &__category-btn {
       &:hover {
-        text-decoration: transparent;
+        color: $accent-color;
+        background-color: $action-color;
+        box-shadow: $box-shadow;
+
+        .categories-filter__icon {
+          filter: invert(48%) sepia(78%) saturate(1926%) hue-rotate(337deg)
+            brightness(103%) contrast(101%);
+        }
       }
     }
-  }
 
-  .popular {
     &__btn {
       &:hover {
         text-decoration: transparent;
-      }
-    }
-  }
-
-  .category-btn {
-    &:hover {
-      color: $accent-color;
-      background-color: $action-color;
-      box-shadow: $box-shadow;
-
-      .category-btn__icon {
-        filter: invert(48%) sepia(78%) saturate(1926%) hue-rotate(337deg)
-          brightness(103%) contrast(101%);
       }
     }
   }
@@ -83,22 +86,103 @@
     }
   }
 
-  .reviews {
+  .sort-filter {
+    .jq-selectbox {
+      &.opened {
+        .jq-selectbox__select {
+          &:hover {
+            border-color: $accent-color;
+          }
+        }
+      }
+
+      &__select {
+        &:hover {
+          border-color: $accent-color;
+          color: $accent-color;
+
+          .jq-selectbox__trigger-arrow {
+            &::before {
+              filter: invert(40%) sepia(100%) saturate(423%) hue-rotate(327deg)
+                brightness(107%) contrast(105%);
+            }
+          }
+        }
+      }
+
+      li.sel,
+      li {
+        &:hover {
+          background-color: rgba($accent-color, 0.2);
+          color: $text-color;
+        }
+      }
+    }
+  }
+
+  .offers-filter {
+    &__label {
+      &:hover {
+        color: $accent-color;
+      }
+
+      .offers-filter {
+        &__input {
+          &:hover + .offers-filter__checkbox {
+            border-color: $accent-color;
+
+            //Неиспользовала миксин потому то с ним не срабатывает транзишн-фильтр почему-то
+            &::before {
+              filter: invert(48%) sepia(37%) saturate(1300%) hue-rotate(330deg)
+                brightness(103%) contrast(104%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .pagination {
+    &__link {
+      &:hover {
+        color: $btn-inner-color;
+        background-color: $accent-color;
+
+        .pagination__arrow {
+          fill: $btn-inner-color;
+        }
+      }
+    }
+  }
+
+  .slider {
     &__btn {
       &:hover {
         background-color: $action-color-2;
         border: 3px solid $action-color-3;
 
-        .reviews__arrow {
+        .slider__arrow {
           fill: $action-color-3;
         }
       }
     }
 
-    &__slider-dots {
+    &__dots {
       button {
         &:hover {
           box-shadow: $shadow-size rgba($fill-color, 0.7);
+        }
+      }
+    }
+  }
+
+  .quantity-form {
+    &__action-btn {
+      &:hover {
+        box-shadow: inset $box-shadow;
+
+        .quantity-form__icon {
+          fill: $accent-color;
         }
       }
     }

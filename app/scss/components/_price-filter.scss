@@ -1,0 +1,66 @@
+.price-filter {
+  font-size: 16px;
+  letter-spacing: 0.03em;
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
+  &__label {
+    @extend %flex-between;
+    color: $decor-color-1;
+  }
+
+  &__input {
+    width: 70px;
+    height: 40px;
+    margin: 0 5px;
+    transition: border-color 0.3s linear;
+  }
+}
+
+.irs {
+  &--flat {
+    height: auto;
+    cursor: pointer;
+    padding: 8px 0;
+
+    .irs-line,
+    .irs-bar {
+      height: 2px;
+    }
+
+    .irs-line {
+      top: 0;
+      background-color: $decor-color-1;
+    }
+
+    .irs-bar,
+    .irs-handle {
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: $accent-color;
+    }
+
+    .irs-handle {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .irs-handle > i:first-child {
+      display: none;
+    }
+
+    .irs-min,
+    .irs-max,
+    .irs-from,
+    .irs-to,
+    .irs-single {
+      display: none;
+    }
+  }
+}

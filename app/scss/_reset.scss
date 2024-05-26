@@ -78,3 +78,12 @@ address,
 cite {
   font-style: normal;
 }
+
+svg {
+  display: block;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  display: none;
+}

@@ -6,15 +6,51 @@
     flex-direction: column;
     justify-content: center;
     padding: 156px 0;
-    @include bg-image(560px 660px, right top);
+    @include bg-image(contain, bottom right);
+
+    @include mq("tablet-2") {
+      position: relative;
+      z-index: 1;
+      padding: 100px 0;
+
+      &::before {
+        @include pseudo;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($page-color, 0.85);
+      }
+    }
+
+    @include mq("tablet") {
+      padding: 75px 0;
+    }
+
+    @include mq("phone") {
+      padding: 25px 0;
+    }
   }
 
   &__title {
     max-width: 450px;
+    margin-bottom: 20px;
     font-size: 66px;
+    line-height: 1.3;
     text-transform: uppercase;
     font-weight: 500;
     color: $main-color;
+
+    @include mq("tablet-2") {
+      font-size: 54px;
+    }
+
+    @include mq("tablet") {
+      font-size: 48px;
+    }
+
+    @include mq("phone") {
+      font-size: 40px;
+    }
   }
 
   &__title-style {
@@ -25,6 +61,11 @@
   &__text {
     max-width: 450px;
     margin-bottom: 20px;
+
+    @include mq("tablet-2") {
+      max-width: 400px;
+      margin-bottom: 35px;
+    }
   }
 
   &__links {
@@ -34,15 +75,5 @@
 
   &__link-order {
     margin-right: 34px;
-  }
-
-  &__link-details {
-    text-decoration: underline;
-    text-decoration-skip-ink: none;
-    color: $main-color;
-
-    &:active {
-      color: $main-color;
-    }
   }
 }

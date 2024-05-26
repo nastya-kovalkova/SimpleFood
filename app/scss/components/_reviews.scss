@@ -1,3 +1,5 @@
+@import "slider";
+
 .reviews {
   &__content {
     @extend %flex-center;
@@ -54,77 +56,5 @@
     display: block;
     font-size: 14px;
     line-height: 1.3;
-  }
-
-  &__nav-block {
-    @extend %flex-center;
-    gap: 20px;
-  }
-
-  &__btn {
-    font-size: 0;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    border: 3px solid $decor-color-1;
-    transition: background-color 0.3s linear, border 0.3s linear,
-      box-shadow 0.3s linear;
-
-    &--next {
-      order: 1;
-    }
-
-    &--active {
-      border: 3px solid $accent-color;
-      background-color: transparent;
-
-      .reviews__arrow {
-        fill: $accent-color;
-      }
-    }
-
-    &:active {
-      background-color: $action-color-2;
-      border-color: transparent;
-      box-shadow: none;
-
-      .reviews__arrow {
-        fill: $fill-color;
-      }
-    }
-  }
-
-  &__arrow {
-    width: 11px;
-    height: 19px;
-    fill: $decor-color-1;
-    transition: fill 0.3s linear;
-
-    &--next {
-      transform: scaleX(-1);
-    }
-  }
-
-  &__slider-dots {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-
-    .slick-active {
-      button {
-        background-color: $accent-color;
-      }
-    }
-
-    button {
-      display: block;
-      font-size: 0;
-      height: 15px;
-      width: 15px;
-      border-radius: 50%;
-      background-color: $decor-color-1;
-      cursor: pointer;
-      transition: box-shadow 0.3s linear, background-color 0.3s linear;
-    }
   }
 }

@@ -1,7 +1,30 @@
+.details-btn {
+  &:focus {
+    text-decoration: underline transparent;
+  }
+}
+
+.quantity-form {
+  &__action-btn {
+    &:focus {
+      box-shadow: inset $box-shadow;
+
+      .quantity-form__icon {
+        fill: $accent-color;
+      }
+    }
+  }
+}
+
 .default-btn {
   &:focus {
     color: $accent-color;
     background-color: $action-color;
+
+    &::before {
+      filter: invert(57%) sepia(56%) saturate(4254%) hue-rotate(337deg)
+        brightness(102%) contrast(101%);
+    }
   }
 }
 
@@ -13,25 +36,17 @@
   }
 }
 
-.hero {
-  &__link-details {
+.popular {
+  &__category-btn {
     &:focus {
-      text-decoration: transparent;
+      box-shadow: $box-shadow;
     }
   }
-}
 
-.popular {
   &__btn {
     &:focus {
       text-decoration: transparent;
     }
-  }
-}
-
-.category-btn {
-  &:focus {
-    box-shadow: $box-shadow;
   }
 }
 
@@ -45,14 +60,43 @@
   }
 }
 
-.reviews {
+.offers-filter {
+  &__label {
+    .offers-filter {
+      &__input {
+        &:focus + .offers-filter__checkbox {
+          border-color: $accent-color;
+        }
+      }
+    }
+  }
+}
+
+.price-filter {
+  &__input {
+    &:focus {
+      @extend %border-focus;
+    }
+  }
+}
+
+.pagination {
+  &__link {
+    &:focus {
+      border: none;
+      box-shadow: $shadow-size $accent-color;
+    }
+  }
+}
+
+.slider {
   &__btn {
     &:focus {
       box-shadow: $box-shadow;
     }
   }
 
-  &__slider-dots {
+  &__dots {
     button {
       &:focus {
         box-shadow: $shadow-size $accent-color;

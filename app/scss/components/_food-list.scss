@@ -1,0 +1,12 @@
+@import "product-card";
+
+.food-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 210px);
+  width: 100%;
+  height: fit-content;
+
+  &__item {
+    height: 300px;
+  }
+}

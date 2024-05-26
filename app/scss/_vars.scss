@@ -1,22 +1,28 @@
 $main-color: #363853;
 $accent-color: #ff6838;
+$main-filter: invert(19%) sepia(4%) saturate(5251%) hue-rotate(198deg)
+  brightness(96%) contrast(87%);
+$accent-filter: invert(57%) sepia(56%) saturate(4254%) hue-rotate(337deg)
+  brightness(102%) contrast(101%);
 $text-color: #31352b;
 $fill-color: #ff7a50;
 $decor-color-1: #c2c2c2;
 $decor-color-2: #ececec;
 $btn-inner-color: #ffffff;
 $page-color: #f9faff;
+$border-color: #e4e4e4;
 $main-font: "Rubik";
 $shadow-size: 0 0 0 2px;
 $box-shadow: $shadow-size rgba($accent-color, 0.7);
 $action-color: rgba(#ff7a50, 0.1);
 $action-color-2: #fff2ed;
 $action-color-3: #ffae94;
+$input-color: #faeded;
 $breakpoints: (
-  "phone": 560px,
-  "tablet": 768px,
+  "desktop": 1200px,
   "tablet-2": 992px,
-  "desktop": 1230px,
+  "tablet": 768px,
+  "phone": 576px,
 );
 
 %style-hover-focus {
@@ -33,6 +39,10 @@ $breakpoints: (
   &:focus {
     box-shadow: $box-shadow;
   }
+}
+
+%border-focus {
+  border-color: $accent-color;
 }
 
 %flex-between,

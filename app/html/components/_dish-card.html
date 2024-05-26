@@ -1,0 +1,157 @@
+<section class="breadcrumbs">
+  <div class="container">
+    <ul class="breadcrumbs__list">
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="index.html">Главная</a>
+      </li>
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="catalog.html">Каталог товаров</a>
+      </li>
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="#">Чизбургер с листьями салата</a>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class="dish-card section">
+  <div class="container">
+    <div class="dish-card__wrap">
+      <div class="dish-card__swiper swiper">
+        <button class="swiper-button-prev"></button>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              class="dish-card__image"
+              src="images/content/products/lettuce-burger/1.png"
+              alt="Чизбургер с листьями салата - фото №1"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              class="dish-card__image"
+              src="images/content/products/lettuce-burger/2.png"
+              alt="Чизбургер с листьями салата - фото №2"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              class="dish-card__image"
+              src="images/content/products/lettuce-burger/3.png"
+              alt="Чизбургер с листьями салата - фото №3"
+            />
+          </div>
+        </div>
+        <button class="swiper-button-next"></button>
+      </div>
+      <div class="dish-card__info-box">
+        <h1 class="dish-card__title title">Чизбургер с листьями салата</h1>
+        <div class="dish-card__rating rating" data-rateyo-rating="5"></div>
+        <span class="dish-card__price"
+          >160 <span class="dish-card__currency">грн</span></span
+        >
+        @include("parts/_quantity-form.html", { "elemClass":
+        "dish-card__quantity-form" })
+
+        <h2 class="dish-card__subtitle subtitle">Доставка и оплата</h2>
+        <ul class="dish-card__descr-list">
+          <li class="dish-card__descr-item">
+            Минимальная сумма заказа — 160 грн.
+          </li>
+          <li class="dish-card__descr-item">
+            Время доставки заказа — 80-140 мин.
+          </li>
+          <li class="dish-card__descr-item">
+            Оплата осуществляется только банковской картой.
+          </li>
+          <li class="dish-card__descr-item">
+            Окончательная сумма заказа формируется после сбора товаров.
+          </li>
+        </ul>
+        <button class="dish-card__list-btn details-btn link-status">
+          Подробнее
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="dish-card__info">
+    <div class="container">
+      <div class="dish-card__info-wrap">
+        <ul class="dish-card__tabs">
+          <li class="dish-card__tab-item">
+            <button
+              class="dish-card__tab-btn dish-card__tab-btn--decsr dish-card__tab-btn--active"
+              type="button"
+            >
+              <h2 class="dish-card__tab-title subtitle">Описание</h2>
+            </button>
+          </li>
+          <li class="dish-card__tab-item">
+            <button
+              class="dish-card__tab-btn dish-card__tab-btn--charact"
+              type="button"
+            >
+              <h2 class="dish-card__tab-title subtitle">Характеристики</h2>
+            </button>
+          </li>
+          <li class="dish-card__tab-item">
+            <button
+              class="dish-card__tab-btn dish-card__tab-btn--reviews"
+              type="button"
+            >
+              <h2 class="dish-card__tab-title subtitle">Отзывы (2)</h2>
+            </button>
+          </li>
+        </ul>
+        <ul class="dish-card__tabs-content">
+          <li
+            class="dish-card__text-item dish-card__text-item--decsr dish-card__text-item--display"
+          >
+            <p class="dish-card__tab-text">
+              Рубленый бифштекс из натуральной говядины на карамелизованной
+              булочке, с ломтиком сыра «Чеддер», кетчупом, горчицей, луком
+              и маринованными огурчиками.
+            </p>
+            <p class="dish-card__tab-text">
+              Аллергены: Глютен, Молоко, Горчица, Может содержать сою, яйцо,
+              следы кунжута
+            </p>
+            <p class="dish-card__tab-text">
+              Внешний вид товара может отличаться от изображений, представленных
+              на сайте.
+            </p>
+          </li>
+          <li class="dish-card__text-item dish-card__text-item--charact">
+            <p class="dish-card__tab-text">
+              Внешний вид товара может отличаться от изображений, представленных
+              на сайте.
+            </p>
+            <p class="dish-card__tab-text">
+              Аллергены: Глютен, Молоко, Горчица, Может содержать сою, яйцо,
+              следы кунжута
+            </p>
+            <p class="dish-card__tab-text">
+              Рубленый бифштекс из натуральной говядины на карамелизованной
+              булочке, с ломтиком сыра «Чеддер», кетчупом, горчицей, луком
+              и маринованными огурчиками.
+            </p>
+          </li>
+          <li class="dish-card__text-item dish-card__text-item--reviews">
+            <p class="dish-card__tab-text">
+              Аллергены: Глютен, Молоко, Горчица, Может содержать сою, яйцо,
+              следы кунжута
+            </p>
+            <p class="dish-card__tab-text">
+              Рубленый бифштекс из натуральной говядины на карамелизованной
+              булочке, с ломтиком сыра «Чеддер», кетчупом, горчицей, луком
+              и маринованными огурчиками.
+            </p>
+            <p class="dish-card__tab-text">
+              Внешний вид товара может отличаться от изображений, представленных
+              на сайте.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

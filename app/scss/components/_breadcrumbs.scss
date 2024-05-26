@@ -1,0 +1,39 @@
+.breadcrumbs {
+  padding: 24px 0;
+  background-color: $action-color;
+
+  &__list {
+    display: flex;
+    gap: 18px;
+  }
+
+  &__item {
+    position: relative;
+    &::after {
+      @include pseudo;
+      right: -12px;
+      top: 50%;
+      width: 6px;
+      height: 10px;
+      transform: translateY(-50%);
+      background-image: url("../images/sprite.svg#breadscrumbs-arrow-icon");
+      @include bg-image(cover);
+      @include recolor(#c1c1c1);
+    }
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    color: #505050;
+  }
+}

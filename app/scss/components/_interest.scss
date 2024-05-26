@@ -1,0 +1,28 @@
+.interest {
+  &__title-wrap {
+    @extend %flex-between;
+    margin-bottom: 60px;
+  }
+
+  &__title {
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  &__slider {
+    display: block;
+  }
+
+  &__slider-nav {
+    gap: 25px;
+  }
+
+  .slick-slide {
+    width: 210px;
+    padding: 1px;
+
+    &:not(:nth-child(5n)) {
+      margin-right: 30px;
+    }
+  }
+}
