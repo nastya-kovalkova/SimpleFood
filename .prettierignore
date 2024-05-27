@@ -1,7 +1,11 @@
 # Ignore all HTML files:
 app/html/index.html
 app/html/catalog.html
+app/html/product.html
 app/html/components/_head.html
 app/html/components/_header.html
 app/html/components/_popular.html
+app/html/components/_dishes.html
+app/html/components/_interest.html
 app/html/components/_footer-scripts.html
+app/html/components/parts/_food-list.html

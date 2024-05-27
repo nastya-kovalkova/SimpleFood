@@ -1,0 +1,37 @@
+<form class="quantity-form @elemClass" action="#" name="quantity-form">
+  <div class="quantity-form__inner">
+    <button
+      class="quantity-form__action-btn quantity-form__action-btn--prev default-btn"
+      type="button"
+      aria-label="Уменьшить количество"
+    >
+      <svg class="quantity-form__icon quantity-form__icon--minus">
+        <use href="images/sprite.svg#minus-icon"></use>
+      </svg>
+    </button>
+    <label for="quantity" aria-label="Количество продукта"></label>
+    <input
+      class="quantity-form__input input-bg input-text"
+      id="quantity"
+      type="text"
+      name="quantity"
+      value="1"
+      disabled
+    />
+    <button
+      class="quantity-form__action-btn quantity-form__action-btn--next default-btn"
+      type="button"
+      aria-label="Увеличить количество"
+    >
+      <svg class="quantity-form__icon quantity-form__icon--plus">
+        <use href="images/sprite.svg#plus-icon"></use>
+      </svg>
+    </button>
+  </div>
+  <button
+    class="quantity-form__form-btn default-btn default-btn--icon"
+    type="submit"
+  >
+    Добавить в корзину
+  </button>
+</form>

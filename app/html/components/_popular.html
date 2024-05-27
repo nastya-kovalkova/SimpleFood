@@ -1,115 +1,85 @@
 <section class="popular section">
   <div class="container">
     <h2 class="title popular__title">Популярные блюда</h2>
-    <ul class="categories popular__categories">
-      <li class="categories__item">
-        @include("parts/_category-btn.html", {
-          "modifyName": "burgers",
-          "categoryName": "Бургеры",
-          "categoryFilter": "all"
-        })
-      </li>
-      <li class="categories__item">
-        @include("parts/_category-btn.html", {
-          "modifyName": "pizza",
-          "categoryName": "Пицца",
-          "categoryFilter": ".category-a"
-        })
-      </li>
-      <li class="categories__item">
-        @include("parts/_category-btn.html", {
-          "modifyName": "sandwiches",
-          "categoryName": "Сендвичи",
-          "categoryFilter": ".category-b"
-        })
-      </li>
-      <li class="categories__item">
-        @include("parts/_category-btn.html", {
-          "modifyName": "asian-food",
-          "categoryName": "Азиатская кухня",
-          "categoryFilter": ".category-c"
-        })
-      </li>
-      <li class="categories__item">
-        @include("parts/_category-btn.html", {
-          "modifyName": "sets",
-          "categoryName": "Cеты",
-          "categoryFilter": ".category-d"
-        })
-      </li>
-    </ul>
-    <ul class="popular__content">
-      <li class="popular__content-item mix category-b">
-        @include("parts/_product-card.html", { 
-          "nameImage": "lettuce-burger",
-          "productName": "Чизбургер с листьями салата", 
-          "productPrice" : "160", 
-        })
-      </li>
-      <li class="popular__content-item mix category-a">
-        @include("parts/_product-card.html", { 
-          "nameImage": "beefburger",
-          "productName": "Бифбургер", 
-          "productPrice" : "190", 
-        })
-      </li>
-      <li class="popular__content-item mix category-b">
-        @include("parts/_product-card.html", { 
-          "nameImage": "king-burger",
-          "productName": "Королевский чизбургер", 
-          "productPrice" : "260", 
-        })
-      </li>
-      <li class="popular__content-item mix category-a">
-        @include("parts/_product-card.html", { 
-          "nameImage": "black-burger",
-          "productName": "Черный гамбургер", 
-          "productPrice" : "199", 
-        })
-      </li>
-      <li class="popular__content-item mix category-c">
-        @include("parts/_product-card.html", { 
-          "nameImage": "chicken-burger",
-          "productName": "Чикен бургер", 
-          "productPrice" : "180", 
-        })
-      </li>
-      <li class="popular__content-item mix category-c">
-        @include("parts/_product-card.html", { 
-          "nameImage": "lettuce-burger",
-          "productName": "Чизбургер с листьями салата", 
-          "productPrice" : "160", 
-        })
-      </li>
-      <li class="popular__content-item mix category-d">
-        @include("parts/_product-card.html", { 
-          "nameImage": "beefburger",
-          "productName": "Бифбургер", 
-          "productPrice" : "190", 
-        })
-      </li>
-      <li class="popular__content-item mix category-d">
-        @include("parts/_product-card.html", { 
-          "nameImage": "king-burger",
-          "productName": "Королевский чизбургер", 
-          "productPrice" : "260", 
-        })
-      </li>
-      <li class="popular__content-item mix category-d">
-        @include("parts/_product-card.html", { 
-          "nameImage": "black-burger",
-          "productName": "Черный гамбургер", 
-          "productPrice" : "199", 
-        })
-      </li>
-      <li class="popular__content-item mix category-a">
-        @include("parts/_product-card.html", { 
-          "nameImage": "chicken-burger",
-          "productName": "Чикен бургер", 
-          "productPrice" : "180", 
-        })
-      </li>
-    </ul>
+    <div class="popular__swiper swiper">
+      <ul class="popular__categories-filter categories-filter swiper-wrapper"> 
+        <li class="categories-filter__item swiper-slide">
+          <button 
+            class="popular__category-btn categories-filter__event" 
+            type="button" 
+            data-filter="all">
+              <span class="categories-filter__icon categories-filter__icon--burgers"></span>
+            Бургеры
+          </button>
+        </li>
+        <li class="categories-filter__item swiper-slide">
+          <button 
+            class="popular__category-btn categories-filter__event" 
+            type="button" 
+            data-filter=".category-a">
+              <span class="categories-filter__icon categories-filter__icon--pizza"></span>
+            Пицца
+          </button>
+        </li>
+        <li class="categories-filter__item swiper-slide">
+          <button 
+            class="popular__category-btn categories-filter__event" 
+            type="button" 
+            data-filter=".category-b">
+              <span class="categories-filter__icon categories-filter__icon--sandwiches"></span>
+            Сендвичи
+          </button>
+        </li>
+        <li class="categories-filter__item swiper-slide">
+          <button 
+            class="popular__category-btn categories-filter__event" 
+            type="button" 
+            data-filter=".category-c">
+              <span class="categories-filter__icon categories-filter__icon--asian-food"></span>
+            Азиатская кухня
+          </button>
+        </li>
+        <li class="categories-filter__item swiper-slide">
+          <button 
+            class="popular__category-btn categories-filter__event" 
+            type="button" 
+            data-filter=".category-d">
+              <span class="categories-filter__icon categories-filter__icon--sets"></span>
+            Cеты
+          </button>
+        </li>
+        <li class="categories-filter__item swiper-slide">
+          <button 
+            class="popular__category-btn categories-filter__event" 
+            type="button" 
+            data-filter=".category-e">
+              <span class="categories-filter__icon categories-filter__icon--sandwiches"></span>
+            Сендвичи
+          </button>
+        </li>
+        <li class="categories-filter__item swiper-slide">
+          <button 
+            class="popular__category-btn categories-filter__event" 
+            type="button" 
+            data-filter=".category-f">
+              <span class="categories-filter__icon categories-filter__icon--asian-food"></span>
+            Азиатская кухня
+          </button>
+        </li>
+        <li class="categories-filter__item swiper-slide">
+          <button 
+            class="popular__category-btn categories-filter__event" 
+            type="button" 
+            data-filter=".category-h">
+              <span class="categories-filter__icon categories-filter__icon--sets"></span>
+            Cеты
+          </button>
+        </li>
+      </ul>
+    </div>
+     @include("parts/_food-list.html", {
+      "elemClass": "popular__food-list"
+     })    
     <button class="popular__btn link-status" type="button">Показать еще</button>
   </div>
 </section>

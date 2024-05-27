@@ -1,0 +1,79 @@
+.slider {
+  &__nav {
+    @extend %flex-center;
+    gap: 20px;
+  }
+
+  &__btn {
+    font-size: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid $decor-color-1;
+    transition: background-color 0.3s linear, border 0.3s linear,
+      box-shadow 0.3s linear;
+
+    &--prev {
+      padding-right: 3px;
+    }
+
+    &--next {
+      order: 1;
+      padding-left: 3px;
+    }
+
+    &--active {
+      border: 3px solid $accent-color;
+      background-color: transparent;
+
+      .slider__arrow {
+        fill: $accent-color;
+      }
+    }
+
+    &:active {
+      background-color: $action-color-2;
+      border-color: transparent;
+      box-shadow: none;
+
+      .slider__arrow {
+        fill: $fill-color;
+      }
+    }
+  }
+
+  &__arrow {
+    display: inline;
+    width: 11px;
+    height: 19px;
+    fill: $decor-color-1;
+    transition: fill 0.3s linear;
+
+    &--next {
+      transform: scaleX(-1);
+    }
+  }
+
+  &__dots {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    .slick-active {
+      button {
+        background-color: $accent-color;
+      }
+    }
+
+    button {
+      display: block;
+      font-size: 0;
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      background-color: $decor-color-1;
+      cursor: pointer;
+      transition: box-shadow 0.3s linear, background-color 0.3s linear;
+    }
+  }
+}

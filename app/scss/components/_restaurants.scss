@@ -1,9 +1,7 @@
-.restaurants {
-  &__list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-  }
+.restaurants-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
 .restaurant-card {

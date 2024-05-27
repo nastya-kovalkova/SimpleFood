@@ -6,6 +6,9 @@
   &__btn {
     @extend %style-focus;
     position: relative;
+    display: flex;
+    width: 44px;
+    height: 44px;
     padding: 13px;
     transition: background-color 0.3s linear, box-shadow 0.3s linear;
 
@@ -26,9 +29,9 @@
   }
 
   &__icon {
-    display: block;
-    height: 19px;
     width: 19px;
+    height: 19px;
+    margin: auto;
     fill: none;
     stroke: $main-color;
     transition: stroke 0.3s linear;
@@ -46,5 +49,16 @@
     border-radius: 10px;
     transition: stroke 0.3s linear, background-color 0.3s linear,
       color 0.3s linear;
+  }
+
+  @include mq("tablet") {
+    gap: 15px;
+    margin-left: auto;
+    margin-right: 25px;
+  }
+
+  @include mq("phone") {
+    gap: 7px;
+    margin-right: 3px;
   }
 }

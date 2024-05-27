@@ -1,21 +1,29 @@
+@import "actions";
+
 .menu {
   @extend %flex-between;
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
 
   &__list {
     display: flex;
     gap: 45px;
-    margin: 0 63px 0 auto;
-  }
+    margin-right: 63px;
 
-  &__link {
-    display: block;
-    font-size: 18px;
-    line-height: normal;
+    @include mq("tablet-2") {
+      gap: 40px;
+      margin-right: 45px;
+    }
 
-    &--active {
-      color: $accent-color;
+    @include mq("tablet") {
+      display: none;
     }
   }
-}
 
-@import "actions";
+  @include mq("tablet") {
+    align-items: stretch;
+  }
+}

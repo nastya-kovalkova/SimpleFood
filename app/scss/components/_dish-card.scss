@@ -1,0 +1,129 @@
+@import "quantity-form";
+
+.dish-card {
+  &__wrap {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+
+  &__swiper {
+    max-width: 52%;
+    height: 550px;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px $decor-color-2;
+    background: $btn-inner-color;
+  }
+
+  &__image {
+    margin: auto;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  &__rating {
+    margin-bottom: 25px;
+  }
+
+  &__price {
+    display: block;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 1.4;
+    color: $main-color;
+    margin-bottom: 20px;
+  }
+
+  &__quantity-form {
+    margin-bottom: 30px;
+  }
+
+  &__subtitle {
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $border-color;
+  }
+
+  &__descr-list {
+    margin-bottom: 20px;
+  }
+
+  &__descr-item {
+    font-size: 16px;
+    letter-spacing: 0.03em;
+    color: #505050;
+  }
+
+  &__info {
+    padding-top: 30px;
+    border-top: 1px solid $border-color;
+  }
+
+  &__info-wrap {
+    max-width: 690px;
+    margin: 0 auto;
+  }
+
+  &__tabs {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 30px;
+  }
+
+  &__tab-btn {
+    &--active {
+      .dish-card__tab-title {
+        color: $accent-color;
+      }
+    }
+  }
+
+  &__tab-title {
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+
+  &__text-item {
+    display: none;
+    opacity: 0.9;
+
+    &--display {
+      display: block;
+    }
+  }
+
+  &__tab-text {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.swiper-slide {
+  display: flex;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 60px;
+  height: 60px;
+  background-image: url("../images/sprite.svg#nav-chevron-icon");
+  @include bg-image(32px);
+  filter: $main-filter;
+  transition: filter 0.1s linear;
+
+  &:hover {
+    filter: $accent-filter;
+  }
+}
+.swiper-button-prev {
+  left: 25px;
+}
+
+.swiper-button-next {
+  right: 25px;
+  transform: scaleX(-1);
+}

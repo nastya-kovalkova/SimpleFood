@@ -1,0 +1,56 @@
+.quantity-form {
+  display: flex;
+  gap: 20px;
+  @include icon-btn(cart);
+
+  &__inner {
+    display: flex;
+  }
+
+  &__input {
+    width: 70px;
+    border-radius: 0;
+    transition: border-color 0.3s linear;
+  }
+
+  &__action-btn {
+    padding-left: 12px;
+    padding-right: 12px;
+
+    &--prev {
+      border-radius: 3px 0 0 3px;
+    }
+
+    &--next {
+      border-radius: 0 3px 3px 0;
+    }
+
+    &--no-active {
+      pointer-events: none;
+      opacity: 0.5;
+
+      &:focus {
+        box-shadow: none;
+        background-color: $accent-color;
+
+        .quantity-form__icon {
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    fill: $btn-inner-color;
+    pointer-events: none;
+  }
+
+  &__form-btn {
+    &--no-active {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+}

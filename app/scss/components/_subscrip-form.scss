@@ -16,22 +16,5 @@
     }
   }
 
-  &__btn-icon {
-    width: 15px;
-    height: 14px;
-    margin-right: 15px;
-    fill: $btn-inner-color;
-    transition: fill 0.3s linear;
-  }
-
-  &__btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 13px;
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: 0;
-  }
+  @include icon-btn(subscrip);
 }
