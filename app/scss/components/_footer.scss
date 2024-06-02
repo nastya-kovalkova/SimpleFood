@@ -9,49 +9,53 @@
   line-height: 1.3;
 
   @include mq("phone") {
-    padding-top: 40px;
+    padding-top: 20px;
   }
 
   &__inner {
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     justify-content: space-between;
+    align-items: start;
+    column-gap: 70px;
     margin-bottom: 60px;
 
     @include mq("desktop") {
-      justify-content: space-evenly;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: repeat(2, auto);
+      column-gap: 40px;
+      row-gap: 30px;
     }
 
     @include mq("tablet-2") {
-      flex-wrap: wrap;
-      margin-bottom: 35px;
+      row-gap: 50px;
     }
 
     @include mq("tablet") {
-      gap: 30px;
+      column-gap: 40px;
+      row-gap: 30px;
+      margin-bottom: 40px;
     }
 
     @include mq("phone") {
-      flex-direction: column;
+      grid-template-columns: auto;
+      justify-items: start;
+      row-gap: 20px;
       margin-bottom: 40px;
     }
   }
 
   &__logo-form {
-    margin-right: 40px;
-
-    @include mq("tablet-2") {
-      width: 200px;
-      margin-right: 20px;
+    @include mq("desktop") {
+      grid-row: span 2;
     }
 
-    @include mq("tablet") {
-      width: 250px;
-      margin-right: 0;
+    @include mq("tablet-2") {
+      grid-row: 1;
     }
 
     @include mq("phone") {
-      width: 200px;
+      margin-bottom: 4px;
     }
   }
 
@@ -63,32 +67,29 @@
   &__menu {
     display: grid;
     grid-template-columns: repeat(3, auto);
-    gap: 20px 70px;
-    margin-right: 40px;
+    justify-content: space-between;
+    align-items: start;
+    gap: 20px;
 
     @include mq("desktop") {
-      grid-template-columns: repeat(2, auto);
-      gap: 15px 70px;
+      grid-template-columns: repeat(4, auto);
+      gap: 15px;
     }
 
     @include mq("tablet-2") {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px 10px;
-      width: 100%;
-      max-width: 65%;
-      margin-right: 0;
+      grid-template-columns: repeat(3, auto);
+      gap: 20px;
     }
 
     @include mq("tablet") {
-      grid-template-columns: repeat(4, 1fr);
-      max-width: 100%;
-      gap: 0 35px;
+      grid-template-columns: repeat(2, auto);
+      justify-content: normal;
+      gap: 0;
     }
 
     @include mq("phone") {
-      grid-template-columns: 1fr;
+      grid-template-columns: auto;
       order: 1;
-      gap: 0;
     }
   }
 
@@ -126,22 +127,17 @@
 
   &__contacts-info {
     @include mq("desktop") {
-      .contact-info {
-        margin-bottom: 25px;
-      }
-    }
-
-    @include mq("tablet-2") {
       display: flex;
       align-items: center;
-      justify-content: space-evenly;
-      margin-top: 40px;
+      justify-content: space-between;
+      gap: 30px;
 
       .contact-info {
         display: flex;
-        gap: 35px;
+        justify-content: space-between;
+        gap: 15px;
+        width: 100%;
         margin-bottom: 0;
-        margin-right: 30px;
 
         &__item {
           margin-bottom: 0;
@@ -149,33 +145,36 @@
       }
     }
 
-    @include mq("tablet") {
+    @include mq("tablet-2") {
       flex-direction: column;
-      width: 100%;
-      margin-top: 0;
+      grid-column: span 2;
+      gap: 20px;
 
       .contact-info {
-        justify-content: space-between;
-        gap: 10px;
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 20px;
+        justify-content: center;
+        gap: 50px;
+      }
+    }
+
+    @include mq("tablet") {
+      .contact-info {
+        &__link {
+          font-size: 14px;
+        }
       }
     }
 
     @include mq("phone") {
       display: block;
+      grid-column: 1;
 
       .contact-info {
         flex-direction: column;
-        gap: 0;
+        gap: 3px;
+        margin-bottom: 9px;
 
-        &__item {
-          margin-bottom: 3px;
-
-          &:last-child {
-            margin-bottom: 9px;
-          }
+        &__link {
+          font-size: 16px;
         }
       }
     }

@@ -1,3 +1,55 @@
+let doc = window.document;
+let restList;
+if (doc.title == "Simple Food | Блюда") {
+  restList = document.querySelector(".promotions__swiper");
+} else if (doc.title == "Simple Food | Главная") {
+  restList = document.querySelector(".restaurants__swiper");
+}
+console.log(doc.title);
+
+// const restList = document.querySelector(".restaurants__swiper");
+let mql = window.matchMedia("(max-width: 767px)");
+let restSlider = new Swiper(restList, {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  init: false,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "bullets",
+  },
+});
+
+if (window.screen.width < 768) {
+  restSlider.init();
+}
+
+window.addEventListener("resize", () => {
+  if (mql.matches) {
+    if (restSlider.destroyed == true) {
+      restSlider = new Swiper(restList, {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          type: "bullets",
+        },
+      });
+    } else if (restSlider.initialized == undefined) {
+      restSlider.init();
+    }
+  } else if (restSlider.initialized == true) {
+    restSlider.destroy();
+  } else return;
+});
+
 const range = $(".price-filter__range");
 const inputFrom = $(".price-filter__input--from");
 const inputTo = $(".price-filter__input--to");
@@ -63,16 +115,47 @@ inputTo.on("change", function () {
 
 const popularSlider = document.querySelector(".popular__swiper");
 const dishCardSlider = document.querySelector(".dish-card__swiper");
+const tabsSlider = document.querySelector(".tabs__swiper");
 
 let categorySwiper = new Swiper(popularSlider, {
   slidesPerView: "auto",
   spaceBetween: 20,
+  breakpoints: {
+    576: {
+      spaceBetween: 20,
+    },
+
+    320: {
+      spaceBetween: 10,
+    },
+  },
 });
 
 let dishCardSwiper = new Swiper(dishCardSlider, {
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "bullets",
+  },
+});
+
+let tabsSwiper = new Swiper(tabsSlider, {
+  slidesPerView: "auto",
+  spaceBetween: 60,
+  breakpoints: {
+    768: {
+      spaceBetween: 60,
+    },
+    576: {
+      spaceBetween: 40,
+    },
+
+    320: {
+      spaceBetween: 30,
+    },
   },
 });
 
@@ -144,6 +227,19 @@ btns.forEach((btn) => {
   });
 });
 
+// const paginationItems = document.querySelectorAll(".pagination__item");
+// const paginationBtns = document.querySelectorAll(".pagination__nav");
+
+// if (paginationItems[0].children.classList.contains("pagination__btn--active")) {
+//   paginationBtns[0].classList.add("pagination__nav--no-active");
+// } else if (
+//   paginationItems[paginationItems.length - 1].children.classList.contains(
+//     "pagination__btn--active"
+//   )
+// ) {
+//   paginationBtns[1].classList.add("pagination__nav--no-active");
+// }
+
 $(function () {
   $(window).on("scroll", function () {
     const scrollValue = window.scrollY;
@@ -157,53 +253,109 @@ $(function () {
     $(window).trigger("scroll");
   });
 
-  $(".burger-menu").on("click", function () {
+  $(".burger-btn").on("click", function () {
     $(".mobile-menu").addClass("active");
     $("body").addClass("lock-bg");
   });
 
-  $(".mobile-menu__btn-close").on("click", function () {
-    $(".mobile-menu").removeClass("active");
-    $("body").removeClass("lock-bg");
+  $(".filter-btn").on("click", function () {
+    $(".filters").addClass("filters--mobile");
+    $("body").addClass("lock-bg");
+  });
+
+  $(".dish-card__image").on("click", function () {
+    $(".dish-card__popup").addClass("dish-card__popup--active");
+    $("dish-card__image").attr(
+      "src",
+      "images/content/products/lettuce-burger/1-big.png"
+    );
+    $("body").addClass("lock-bg lock-bg--popup");
+  });
+
+  $(".close-btn").on("click", function () {
+    if ($(this).hasClass("mobile-menu__close-btn")) {
+      $(".mobile-menu").removeClass("active");
+      $("body").removeClass("lock-bg");
+    } else if ($(this).hasClass("filters__close-btn")) {
+      $(".filters").removeClass("filters--mobile");
+      $("body").removeClass("lock-bg");
+    } else if ($(this).hasClass("dish-card__close-btn")) {
+      $(".dish-card__popup").removeClass("dish-card__popup--active");
+      $("body").removeClass("lock-bg lock-bg--popup");
+    }
   });
 
   $(function () {
     $(".reviews__slider").slick({
-      autoplay: true,
       dots: true,
-      dotsClass: "slider__dots",
-      appendDots: ".slider__nav",
-      appendArrows: ".slider__nav",
+      dotsClass: "slider-dots",
+      appendDots: ".slider-nav",
+      appendArrows: ".slider-nav",
       prevArrow:
-        '<button class="slider__btn slider__btn--prev slider__btn--active" type="button"><svg class="slider__arrow"><use xlink:href="images/sprite.svg#slider-arrow-icon"></use></svg></button>',
+        '<button class="slider-nav__btn slider-nav__btn--prev slider-nav__btn--active" type="button"><svg class="slider-nav__arrow"><use xlink:href="images/sprite.svg#slider-arrow-icon"></use></svg></button>',
       nextArrow:
-        '<button class="slider__btn slider__btn--next" type="button"><svg class="slider__arrow slider__arrow--next"><use xlink:href="images/sprite.svg#slider-arrow-icon"></use></svg></button>',
+        '<button class="slider-nav__btn slider-nav__btn--next" type="button"><svg class="slider-nav__arrow slider-nav__arrow--next"><use xlink:href="images/sprite.svg#slider-arrow-icon"></use></svg></button>',
       speed: 1000,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            dots: false,
+          },
+        },
+      ],
     });
   });
 
   $(function () {
     $(".interest__slider").slick({
-      variableWidth: true,
       slidesToShow: 5,
       slidesToScroll: 5,
-      appendDots: ".slider__nav",
-      appendArrows: ".slider__nav",
+      dotsClass: "slider-dots",
+      appendDots: ".interest__slider-box",
+      appendArrows: ".slider-nav",
       prevArrow:
-        '<button class="slider__btn slider__btn--prev slider__btn--active" type="button"><svg class="slider__arrow"><use xlink:href="images/sprite.svg#slider-arrow-icon"></use></svg></button>',
+        '<button class="slider-nav__btn slider-nav__btn--prev slider-nav__btn--active" type="button"><svg class="slider-nav__arrow"><use xlink:href="images/sprite.svg#slider-arrow-icon"></use></svg></button>',
       nextArrow:
-        '<button class="slider__btn slider__btn--next" type="button"><svg class="slider__arrow slider__arrow--next"><use xlink:href="images/sprite.svg#slider-arrow-icon"></use></svg></button>',
+        '<button class="slider-nav__btn slider-nav__btn--next" type="button"><svg class="slider-nav__arrow slider-nav__arrow--next"><use xlink:href="images/sprite.svg#slider-arrow-icon"></use></svg></button>',
       speed: 500,
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 4,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            dots: true,
+            arrows: false,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+          },
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            dots: true,
+            arrows: false,
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          },
+        },
+      ],
     });
   });
 
-  $(".slider__nav").on("click", function () {
-    $(".slider__btn").removeClass("slider__btn--active");
+  $(".slider-nav").on("click", function () {
+    $(".slider-nav__btn").removeClass("slider-nav__btn--active");
   });
 
   //не понимаю почему не срабатвает, хотя в функции выше сработало
-  $(".interest .slider__nav .slider__btn--prev").removeClass(
-    "slider__btn--active"
+  $(".interest .slider-nav .slider-nav__btn--prev").removeClass(
+    "slider-nav__btn--active"
   );
 
   $(".sort-filter__select").styler();
@@ -221,11 +373,7 @@ $(function () {
     },
   });
 
-  $(".pagination__link").on("click", function (e) {
-    e.preventDefault();
-  });
-
-  $(".pagination__btn").on("click", function () {
+  $(".pagination__item .pagination__btn").on("click", function () {
     $(".pagination__btn").removeClass("pagination__btn--active");
     $(this).addClass("pagination__btn--active");
   });
@@ -242,25 +390,13 @@ $(function () {
       "</svg>",
   });
 
-  $(".dish-card__tab-btn").on("click", function () {
-    $(".dish-card__tab-btn").removeClass("dish-card__tab-btn--active");
-    $(this).addClass("dish-card__tab-btn--active");
+  $(".tabs__link").on("click", function (e) {
+    e.preventDefault();
+    $(".tabs__link").removeClass("tabs__link--active");
+    $(this).addClass("tabs__link--active");
 
-    $(".dish-card__text-item").removeClass("dish-card__text-item--display");
-
-    if ($(this).hasClass("dish-card__tab-btn--decsr")) {
-      $(".dish-card__text-item--decsr").addClass(
-        "dish-card__text-item--display"
-      );
-    } else if ($(this).hasClass("dish-card__tab-btn--charact")) {
-      $(".dish-card__text-item--charact").addClass(
-        "dish-card__text-item--display"
-      );
-    } else {
-      $(".dish-card__text-item--reviews").addClass(
-        "dish-card__text-item--display"
-      );
-    }
+    $(".tabs__content-item").removeClass("tabs__content-item--active");
+    $($(this).attr("href")).addClass("tabs__content-item--active");
   });
 
   var mixer = mixitup(".food-list");

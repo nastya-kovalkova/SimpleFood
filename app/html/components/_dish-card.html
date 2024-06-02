@@ -16,34 +16,42 @@
 <section class="dish-card section">
   <div class="container">
     <div class="dish-card__wrap">
-      <div class="dish-card__swiper swiper">
-        <button class="swiper-button-prev"></button>
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img
-              class="dish-card__image"
-              src="images/content/products/lettuce-burger/1.png"
-              alt="Чизбургер с листьями салата - фото №1"
-            />
-          </div>
-          <div class="swiper-slide">
-            <img
-              class="dish-card__image"
-              src="images/content/products/lettuce-burger/2.png"
-              alt="Чизбургер с листьями салата - фото №2"
-            />
-          </div>
-          <div class="swiper-slide">
-            <img
-              class="dish-card__image"
-              src="images/content/products/lettuce-burger/3.png"
-              alt="Чизбургер с листьями салата - фото №3"
-            />
-          </div>
+      <div class="dish-card__popup">
+        <button class="dish-card__close-btn close-btn">
+          <svg class="close-btn__icon">
+            <use xlink:href="images/sprite.svg#cross-icon"></use>
+          </svg>
+        </button>
+        <div class="dish-card__swiper swiper">
+          <button class="swiper-button-prev"></button>
+          <ul class="dish-card__swiper-wrapper swiper-wrapper">
+            <li class="dish-card__swiper-slide swiper-slide">
+              <img
+                class="dish-card__image"
+                src="images/content/products/lettuce-burger/1.png"
+                alt="Чизбургер с листьями салата - фото №1"
+              />
+            </li>
+            <li class="dish-card__swiper-slide swiper-slide">
+              <img
+                class="dish-card__image"
+                src="images/content/products/lettuce-burger/2.png"
+                alt="Чизбургер с листьями салата - фото №2"
+              />
+            </li>
+            <li class="dish-card__swiper-slide swiper-slide">
+              <img
+                class="dish-card__image"
+                src="images/content/products/lettuce-burger/3.png"
+                alt="Чизбургер с листьями салата - фото №3"
+              />
+            </li>
+          </ul>
+          <button class="swiper-button-next"></button>
+          <div class="swiper-pagination"></div>
         </div>
-        <button class="swiper-button-next"></button>
       </div>
-      <div class="dish-card__info-box">
+      <div class="dish-card__brief-info">
         <h1 class="dish-card__title title">Чизбургер с листьями салата</h1>
         <div class="dish-card__rating rating" data-rateyo-rating="5"></div>
         <span class="dish-card__price"
@@ -75,82 +83,197 @@
   </div>
   <div class="dish-card__info">
     <div class="container">
-      <div class="dish-card__info-wrap">
-        <ul class="dish-card__tabs">
-          <li class="dish-card__tab-item">
-            <button
-              class="dish-card__tab-btn dish-card__tab-btn--decsr dish-card__tab-btn--active"
-              type="button"
-            >
-              <h2 class="dish-card__tab-title subtitle">Описание</h2>
-            </button>
-          </li>
-          <li class="dish-card__tab-item">
-            <button
-              class="dish-card__tab-btn dish-card__tab-btn--charact"
-              type="button"
-            >
-              <h2 class="dish-card__tab-title subtitle">Характеристики</h2>
-            </button>
-          </li>
-          <li class="dish-card__tab-item">
-            <button
-              class="dish-card__tab-btn dish-card__tab-btn--reviews"
-              type="button"
-            >
-              <h2 class="dish-card__tab-title subtitle">Отзывы (2)</h2>
-            </button>
-          </li>
-        </ul>
-        <ul class="dish-card__tabs-content">
-          <li
-            class="dish-card__text-item dish-card__text-item--decsr dish-card__text-item--display"
+      <div class="dish-card__tabs tabs">
+        <div class="tabs__swiper swiper">
+          <ul class="tabs__list swiper-wrapper">
+            <li class="tabs__item swiper-slide">
+              <a
+                class="tabs__link tabs__link--description tabs__link--active"
+                href="#description"
+              >
+                <h2 class="tabs__name subtitle">Описание</h2>
+              </a>
+            </li>
+            <li class="tabs__item swiper-slide">
+              <a class="tabs__link tabs__link--charact" href="#parameters">
+                <h2 class="tabs__name subtitle">Характеристики</h2>
+              </a>
+            </li>
+            <li class="tabs__item swiper-slide">
+              <a class="tabs__link tabs__link--reviews" href="#reviews">
+                <h2 class="tabs__name subtitle">Отзывы (2)</h2>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="tabs__content">
+          <div
+            class="tabs__content-item tabs__content-item--active"
+            id="description"
           >
-            <p class="dish-card__tab-text">
-              Рубленый бифштекс из натуральной говядины на карамелизованной
-              булочке, с ломтиком сыра «Чеддер», кетчупом, горчицей, луком
-              и маринованными огурчиками.
-            </p>
-            <p class="dish-card__tab-text">
-              Аллергены: Глютен, Молоко, Горчица, Может содержать сою, яйцо,
-              следы кунжута
-            </p>
-            <p class="dish-card__tab-text">
-              Внешний вид товара может отличаться от изображений, представленных
-              на сайте.
-            </p>
-          </li>
-          <li class="dish-card__text-item dish-card__text-item--charact">
-            <p class="dish-card__tab-text">
-              Внешний вид товара может отличаться от изображений, представленных
-              на сайте.
-            </p>
-            <p class="dish-card__tab-text">
-              Аллергены: Глютен, Молоко, Горчица, Может содержать сою, яйцо,
-              следы кунжута
-            </p>
-            <p class="dish-card__tab-text">
-              Рубленый бифштекс из натуральной говядины на карамелизованной
-              булочке, с ломтиком сыра «Чеддер», кетчупом, горчицей, луком
-              и маринованными огурчиками.
-            </p>
-          </li>
-          <li class="dish-card__text-item dish-card__text-item--reviews">
-            <p class="dish-card__tab-text">
-              Аллергены: Глютен, Молоко, Горчица, Может содержать сою, яйцо,
-              следы кунжута
-            </p>
-            <p class="dish-card__tab-text">
-              Рубленый бифштекс из натуральной говядины на карамелизованной
-              булочке, с ломтиком сыра «Чеддер», кетчупом, горчицей, луком
-              и маринованными огурчиками.
-            </p>
-            <p class="dish-card__tab-text">
-              Внешний вид товара может отличаться от изображений, представленных
-              на сайте.
-            </p>
-          </li>
-        </ul>
+            <ul class="dish-description">
+              <li class="dish-description__item">
+                Рубленый бифштекс из натуральной говядины на карамелизованной
+                булочке, с ломтиком сыра «Чеддер», кетчупом, горчицей, луком
+                и маринованными огурчиками.
+              </li>
+              <li class="dish-description__item">
+                Аллергены: Глютен, Молоко, Горчица, Может содержать сою, яйцо,
+                следы кунжута
+              </li>
+              <li class="dish-description__item">
+                Внешний вид товара может отличаться от изображений,
+                представленных на сайте.
+              </li>
+            </ul>
+          </div>
+          <div class="tabs__content-item" id="parameters">
+            <ul class="tabs__dish-parameters dish-parameters">
+              <li class="dish-parameters__item">
+                Диаметр:
+                <span class="dish-parameters__span">20 см</span>
+              </li>
+              <li class="dish-parameters__item">
+                Вес:
+                <span class="dish-parameters__span">300 гр</span>
+              </li>
+              <li class="dish-parameters__item">
+                Калорийность (на 100г):
+                <span class="dish-parameters__span"> 295 ккал</span>
+              </li>
+              <li class="dish-parameters__item">
+                Срок хранения:
+                <span class="dish-parameters__span">до 3 дней</span>
+              </li>
+            </ul>
+          </div>
+          <div class="tabs__content-item" id="reviews">
+            <h3 class="tabs__title">Мнения наших клиентов</h3>
+            <ul class="tabs__dish-reviews dish-reviews">
+              <li class="dish-reviews__item">
+                <figure class="comment">
+                  <div class="comment__top">
+                    <img
+                      class="comment__avatar"
+                      src="images/content/no-avatar.jpg"
+                      alt="Аватар Андрея"
+                    />
+                    <div class="comment__info">
+                      <figcaption class="comment__name">Андрей</figcaption>
+                      <span class="comment__date">10.06.2021</span>
+                    </div>
+                    <div
+                      class="comment__rating rating"
+                      data-rateyo-rating="5"
+                    ></div>
+                  </div>
+                  <blockquote class="comment__text">
+                    Доставили быстро. Товар свежий и очень вкусный, буду
+                    пробовать еще!))
+                  </blockquote>
+                </figure>
+              </li>
+              <li class="dish-reviews__item">
+                <figure class="comment">
+                  <div class="comment__top">
+                    <img
+                      class="comment__avatar"
+                      src="images/content/no-avatar.jpg"
+                      alt="Аватар Андрея"
+                    />
+                    <div class="comment__info">
+                      <figcaption class="comment__name">
+                        Екатерина Белая
+                      </figcaption>
+                      <span class="comment__date">7.06.2021</span>
+                    </div>
+                    <div
+                      class="comment__rating rating"
+                      data-rateyo-rating="4"
+                    ></div>
+                  </div>
+                  <blockquote class="comment__text">
+                    этот бургер неплохой чтобы перекусить, когда нет возможности
+                    или времени что-нибудь приготовить. Это отличный вариант,
+                    чтобы съесть на ходу, но чтобы побаловать себя, я больше
+                    предпочту пиццу
+                  </blockquote>
+                </figure>
+              </li>
+            </ul>
+            <form
+              class="tabs__add-review add-review"
+              action="#"
+              name="add-review-form"
+            >
+              <h3 class="tabs__title">Оставить отзыв</h3>
+              <label class="add-review__label"
+                >Ваша оценка *
+                <div
+                  class="add-review__rating rating"
+                  data-rateyo-rating="0"
+                  data-rateyo-read-only="false"
+                  required
+                ></div>
+              </label>
+              <div class="add-review__row">
+                <div class="add-review__row-item add-review__row-item--review">
+                  <label class="add-review__label" for="review"
+                    >Ваш отзыв *
+                  </label>
+                  <textarea
+                    class="add-review__input add-review__input--textarea input-style"
+                    id="review"
+                    name="review"
+                    placeholder="Введите текст отзыва"
+                    required
+                  ></textarea>
+                </div>
+                <div class="add-review__row-item">
+                  <label class="add-review__label"
+                    >Имя
+                    <input
+                      class="add-review__input input-style"
+                      type="text"
+                      name="name"
+                      placeholder="Введите ваше имя"
+                    />
+                  </label>
+                  <label class="add-review__label"
+                    >Email *
+                    <input
+                      class="add-review__input input-style"
+                      type="email"
+                      name="email"
+                      placeholder="youremail@mail.com"
+                      required
+                    />
+                  </label>
+                </div>
+              </div>
+              <label
+                class="add-review__label add-review__label--checkbox checkbox-label"
+              >
+                <input
+                  class="add-review__checkbox checkbox"
+                  type="checkbox"
+                  name="save"
+                  value="on"
+                />
+                <span
+                  class="add-review__fake-checkbox input-style fake-checkbox"
+                ></span>
+                <p class="add-review__checkbox-text">
+                  Сохранить моё имя, email и адрес сайта в этом браузере для
+                  последующих моих комментариев.
+                </p>
+              </label>
+              <button class="add-review__btn default-btn" type="submit">
+                Оставить отзыв
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>

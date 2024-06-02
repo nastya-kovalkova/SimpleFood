@@ -28,6 +28,12 @@
   }
 }
 
+.input-style {
+  &:focus {
+    border-color: transparent;
+  }
+}
+
 .actions {
   &__btn {
     &:focus {
@@ -60,14 +66,10 @@
   }
 }
 
-.offers-filter {
-  &__label {
-    .offers-filter {
-      &__input {
-        &:focus + .offers-filter__checkbox {
-          border-color: $accent-color;
-        }
-      }
+.checkbox-label {
+  .checkbox {
+    &:focus + .fake-checkbox {
+      border-color: $accent-color;
     }
   }
 }
@@ -89,34 +91,18 @@
   }
 }
 
-.slider {
+.slider-nav {
   &__btn {
     &:focus {
       box-shadow: $box-shadow;
     }
   }
-
-  &__dots {
-    button {
-      &:focus {
-        box-shadow: $shadow-size $accent-color;
-      }
-    }
-  }
 }
 
-.subscrip-form {
-  &__input {
+.slider-dots {
+  button {
     &:focus {
-      border-color: transparent;
-    }
-  }
-
-  &__btn {
-    &:focus {
-      .subscrip-form__btn-icon {
-        fill: $accent-color;
-      }
+      box-shadow: $shadow-size $accent-color;
     }
   }
 }

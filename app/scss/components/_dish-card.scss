@@ -1,31 +1,228 @@
 @import "quantity-form";
+@import "tabs";
+@import "dish-description";
+@import "dish-parameters";
+@import "dish-reviews";
+@import "comment";
+@import "add-review-form";
 
 .dish-card {
   &__wrap {
     display: flex;
     gap: 30px;
     margin-bottom: 60px;
+
+    @include mq("desktop") {
+      margin-bottom: 50px;
+    }
+
+    @include mq("tablet") {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    @include mq("phone") {
+      padding-top: 10px;
+      margin-bottom: 20px;
+    }
   }
 
-  &__swiper {
-    max-width: 52%;
+  &__popup {
+    width: 100%;
     height: 550px;
+    max-width: 610px;
     border-radius: 5px;
     box-shadow: 0 0 0 1px $decor-color-2;
     background: $btn-inner-color;
+
+    @include mq("desktop") {
+      max-width: 50%;
+    }
+
+    @include mq("tablet-2") {
+      height: 470px;
+      max-width: 40%;
+    }
+
+    @include mq("tablet") {
+      height: 420px;
+      max-width: 80%;
+    }
+
+    @include mq("phone") {
+      height: 345px;
+      max-width: 100%;
+    }
+
+    &--active {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      z-index: 1001;
+      width: 90%;
+      height: 90%;
+      max-width: 1728px;
+      max-height: 972px;
+      padding: 60px 60px 87px 60px;
+      transform: translate(-50%, -50%);
+      background-color: $btn-inner-color;
+      border-radius: 15px;
+
+      @include mq("desktop") {
+        padding: 20px 20px 67px 20px;
+      }
+
+      .dish-card__close-btn {
+        position: absolute;
+        top: 38px;
+        right: 38px;
+        z-index: 2;
+        display: block;
+      }
+
+      .dish-card__swiper {
+        height: 100%;
+        max-width: 100%;
+        box-shadow: none;
+        padding-bottom: 75px;
+      }
+
+      .dish-card__image {
+        width: 100%;
+        height: 100%;
+        max-width: 750px;
+        max-height: 750px;
+        object-fit: contain;
+
+        @include mq("tablet-2") {
+          max-width: 500px;
+        }
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        display: block;
+      }
+
+      .swiper-button-prev {
+        left: 0;
+      }
+
+      .swiper-button-next {
+        right: 0;
+      }
+
+      .swiper-pagination {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        gap: 7px;
+      }
+    }
+  }
+
+  &__close-btn {
+    display: none;
+    padding: 6px;
+    border-radius: 3px;
+
+    .close-btn__icon {
+      width: 32px;
+      height: 32px;
+      fill: #000000;
+      fill-opacity: 0.15;
+      transition: fill-opacity 0.3s linear, fill 0.3s linear;
+    }
+
+    &:hover {
+      .close-btn__icon {
+        fill-opacity: 1;
+      }
+    }
+
+    &:active {
+      .close-btn__icon {
+        fill: $accent-color;
+      }
+    }
+  }
+
+  &__swiper {
+    height: 100%;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    @include mq("tablet-2") {
+      display: none;
+    }
+  }
+
+  .swiper-button-prev {
+    left: 0;
+  }
+
+  .swiper-button-next {
+    right: 0;
+  }
+
+  .swiper-pagination {
+    @include mq("tablet-2") {
+      position: absolute;
+      bottom: 35px;
+      display: flex;
+      justify-content: center;
+    }
+
+    @include mq("phone") {
+      display: none;
+    }
   }
 
   &__image {
     margin: auto;
+    cursor: pointer;
+
+    @include mq("desktop") {
+      width: 350px;
+    }
+
+    @include mq("phone") {
+      pointer-events: none;
+    }
   }
 
   &__title {
     margin-bottom: 30px;
     text-align: left;
+
+    @include mq("tablet-2") {
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    @include mq("tablet") {
+      font-size: 30px;
+    }
+
+    @include mq("phone") {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
   }
 
   &__rating {
     margin-bottom: 25px;
+
+    @include mq("tablet-2") {
+      margin-bottom: 20px;
+    }
+
+    @include mq("phone") {
+      margin-bottom: 15px;
+    }
   }
 
   &__price {
@@ -39,16 +236,38 @@
 
   &__quantity-form {
     margin-bottom: 30px;
+
+    @include mq("tablet-2") {
+      flex-direction: column;
+      max-width: 247px;
+    }
+
+    @include mq("phone") {
+      gap: 15px;
+    }
   }
 
   &__subtitle {
     padding-bottom: 15px;
     margin-bottom: 20px;
     border-bottom: 1px solid $border-color;
+
+    @include mq("phone") {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
   }
 
   &__descr-list {
     margin-bottom: 20px;
+
+    @include mq("tablet") {
+      margin-bottom: 10px;
+    }
+
+    @include mq("phone") {
+      margin-bottom: 5px;
+    }
   }
 
   &__descr-item {
@@ -62,68 +281,8 @@
     border-top: 1px solid $border-color;
   }
 
-  &__info-wrap {
+  &__tabs {
     max-width: 690px;
     margin: 0 auto;
   }
-
-  &__tabs {
-    display: flex;
-    gap: 60px;
-    margin-bottom: 30px;
-  }
-
-  &__tab-btn {
-    &--active {
-      .dish-card__tab-title {
-        color: $accent-color;
-      }
-    }
-  }
-
-  &__tab-title {
-    line-height: 1.5;
-    letter-spacing: 0;
-  }
-
-  &__text-item {
-    display: none;
-    opacity: 0.9;
-
-    &--display {
-      display: block;
-    }
-  }
-
-  &__tab-text {
-    &:not(:last-child) {
-      margin-bottom: 20px;
-    }
-  }
-}
-
-.swiper-slide {
-  display: flex;
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-  width: 60px;
-  height: 60px;
-  background-image: url("../images/sprite.svg#nav-chevron-icon");
-  @include bg-image(32px);
-  filter: $main-filter;
-  transition: filter 0.1s linear;
-
-  &:hover {
-    filter: $accent-filter;
-  }
-}
-.swiper-button-prev {
-  left: 25px;
-}
-
-.swiper-button-next {
-  right: 25px;
-  transform: scaleX(-1);
 }

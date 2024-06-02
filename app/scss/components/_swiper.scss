@@ -1,0 +1,86 @@
+.restaurants,
+.promotions {
+  &__swiper {
+    padding-bottom: 4px;
+
+    @include mq("phone") {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.swiper-slide {
+  display: flex;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background-image: url("../images/sprite.svg#nav-chevron-icon");
+  @include bg-image(32px);
+  filter: $main-filter;
+  transition: filter 0.1s linear;
+
+  &:active {
+    filter: $accent-filter;
+  }
+
+  &.swiper-button-disabled {
+    filter: $main-filter;
+  }
+
+  @include mq("phone") {
+    display: none;
+  }
+}
+
+.swiper-button-prev {
+  left: 25px;
+  transform: translateY(-50%);
+}
+
+.swiper-button-next {
+  right: 25px;
+  transform: scaleX(-1) translateY(-50%);
+}
+
+.restaurants,
+.promotions {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+
+    @include mq("tablet") {
+      display: block;
+    }
+
+    @include mq("phone") {
+      display: none;
+    }
+  }
+}
+
+.swiper-pagination {
+  position: static;
+  display: none;
+
+  @include mq("phone") {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+  }
+}
+
+.swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  background-color: $decor-color-1;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $accent-color;
+}

@@ -15,10 +15,9 @@
   }
 }
 
-@mixin pseudo($display: block, $pos: absolute, $content: "") {
+@mixin pseudo($pos: absolute, $content: "") {
   content: $content;
   position: $pos;
-  display: $display;
 }
 
 @mixin icon-btn($iconId) {

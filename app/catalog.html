@@ -72,13 +72,13 @@
               </button>
             </li>
           </ul>
-          <button class="burger-menu" type="button">
-            <svg class="burger-menu__icon">
+          <button class="burger-btn" type="button">
+            <svg class="burger-btn__icon">
               <use
                 xlink:href="images/sprite.svg#burger-menu-icon"
               ></use>
             </svg>
-          </button>   
+          </button>             
         </div>     
       </nav>
     </div>
@@ -89,8 +89,8 @@
   <img class="logo__img" src="images/logo.svg" alt="Логотип" />
 </a>
  
-      <button class="mobile-menu__btn-close">
-        <svg class="mobile-menu__btn-icon">
+      <button class="mobile-menu__close-btn close-btn">
+        <svg class="close-btn__icon">
           <use xlink:href="images/sprite.svg#cross-icon"></use>
         </svg>
       </button>
@@ -192,139 +192,153 @@
   <div class="container">
     <div class="dishes__top">
       <h1 class="dishes__title title">Каталог продуктов</h1>
-      <form class="dishes__sort-filter sort-filter" name="sort-filter" action="#">
-        <select class="sort-filter__select sort-filter__select--by-name">
-          <option class="sort-filter__option" value="">По названию</option>
-          <option class="sort-filter__option" value="">По стоимости</option>
-          <option class="sort-filter__option" value="">По популярности</option>
-        </select>
-        <select class="sort-filter__select sort-filter__select--by-quantity">
-          <option class="sort-filter__option" value="10">по 10</option>
-          <option class="sort-filter__option" value="12">по 12</option>
-          <option class="sort-filter__option" value="16">по 16</option>
-        </select>
-      </form>
+      <div class="dishes__top-inner">
+        <button class="filter-btn">
+          <svg class="filter-btn__icon">
+            <use xlink:href="images/sprite.svg#filter-icon"></use>
+          </svg>
+        </button>
+        <form class="dishes__sort-filter sort-filter" name="sort-filter" action="#">
+          <select class="sort-filter__select sort-filter__select--by-name">
+            <option class="sort-filter__option" value="">По названию</option>
+            <option class="sort-filter__option" value="">По стоимости</option>
+            <option class="sort-filter__option" value="">По популярности</option>
+          </select>
+          <select class="sort-filter__select sort-filter__select--by-quantity">
+            <option class="sort-filter__option" value="10">по 10</option>
+            <option class="sort-filter__option" value="12" selected>по 12</option>
+            <option class="sort-filter__option" value="16">по 16</option>
+          </select>
+        </form>
+      </div>
     </div>
-    <div class="dishes__inner">
-      <ul class="dishes__filter-block">
-        <li class="dishes__filter-item">
-          <h2 class="dishes__subtitle subtitle">Категории</h2>
-          <div class="dishes__filter-inner">
-            <ul class="categories-filter">
-              <li class="dishes__filter-line categories__item">
-                <a class="categories-filter__event link-status" href="#">
-                  Бургеры
-                </a>
-              </li>
-              <li class="dishes__filter-line categories__item">
-                <a class="categories-filter__event link-status" href="#">
-                  Пицца
-                </a>
-              </li>
-              <li class="dishes__filter-line categories__item">
-                <a class="categories-filter__event link-status" href="#">
-                  Сендвичи
-                </a>
-              </li>
-              <li class="dishes__filter-line categories__item">
-                <a class="categories-filter__event link-status" href="#">
-                  Азиатская кухня
-                </a>
-              </li>
-              <li class="dishes__filter-line categories__item">
-                <a class="categories-filter__event link-status" href="#">
-                  Cеты
-                </a>
-              </li>
-              <li class="dishes__filter-line categories__item">
-                <a class="categories-filter__event link-status" href="#">
-                  Европейская кухня
-                </a>
-              </li>
-              <li class="dishes__filter-line categories__item">
-                <a class="categories-filter__event link-status" href="#">
-                  Напитки
-                </a>
-              </li>
-              <li class="dishes__filter-line categories__item">
-                <a class="categories-filter__event link-status" href="#">
-                  Алкоголь
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="dishes__filter-item">
-          <h2 class="dishes__subtitle subtitle">Предложения</h2>
-          <div class="dishes__filter-inner">
-            <form class="offers-filter" action="#" name="offers-form" method="GET">
-              <ul class="offers__list">
-                <li class="dishes__filter-line offers__item">
-                  <label class="offers-filter__label">
-                    <input class="offers-filter__input" type="checkbox" name="discount">
-                    <span class="offers-filter__checkbox input-bg input-status"></span>
-                    Со скидкой
-                  </label>
+    <div class="dishes__content">
+      <div class="dishes__filters filters">
+        <button class="filters__close-btn close-btn">
+          <svg class="close-btn__icon">
+            <use xlink:href="images/sprite.svg#cross-icon"></use>
+          </svg>
+        </button>
+        <ul class="filters__list">
+          <li class="filters__item">
+            <h2 class="filters__subtitle subtitle">Категории</h2>
+            <div class="filters__content">
+              <ul class="filters__categories-filter categories-filter">
+                <li class="filters__line categories__item">
+                  <a class="categories-filter__event link-status" href="#">
+                    Бургеры
+                  </a>
                 </li>
-                <li class="dishes__filter-line offers__item">
-                  <label class="offers-filter__label">
-                    <input class="offers-filter__input" type="checkbox" name="news">
-                    <span class="offers-filter__checkbox input-bg input-status"></span>
-                    Новинка
-                  </label>
+                <li class="filters__line categories__item">
+                  <a class="categories-filter__event link-status" href="#">
+                    Пицца
+                  </a>
                 </li>
-                <li class="dishes__filter-line offers__item">
-                  <label class="offers-filter__label">
-                    <input class="offers-filter__input" type="checkbox" name="hits">
-                    <span class="offers-filter__checkbox input-bg input-status"></span>
-                    Хит
-                  </label>
+                <li class="filters__line categories__item">
+                  <a class="categories-filter__event link-status" href="#">
+                    Сендвичи
+                  </a>
+                </li>
+                <li class="filters__line categories__item">
+                  <a class="categories-filter__event link-status" href="#">
+                    Азиатская кухня
+                  </a>
+                </li>
+                <li class="filters__line categories__item">
+                  <a class="categories-filter__event link-status" href="#">
+                    Cеты
+                  </a>
+                </li>
+                <li class="filters__line categories__item">
+                  <a class="categories-filter__event link-status" href="#">
+                    Европейская кухня
+                  </a>
+                </li>
+                <li class="filters__line categories__item">
+                  <a class="categories-filter__event link-status" href="#">
+                    Напитки
+                  </a>
+                </li>
+                <li class="filters__line categories__item">
+                  <a class="categories-filter__event link-status" href="#">
+                    Алкоголь
+                  </a>
                 </li>
               </ul>
-          </form>
-          </div>
-        </li>
-        <li class="dishes__filter-item">
-          <h2 class="dishes__subtitle subtitle">Цена</h2>
-          <div class="dishes__filter-inner">
-            <form class="price-filter" action="#" name="price-form" method="GET">
-              <div class="price-filter__wrap">
-                <label class="price-filter__label">от
-                  <input 
-                    class="price-filter__input price-filter__input--from input-bg input-text " 
-                    type="text" 
-                    name="price-from"
-                    id="price-from"
-                    value="100"
-                  >
-                  <span class="price-filter__currency">₴</span>
-                </label>
-                <label class="price-filter__label">до
-                  <input 
-                  class="price-filter__input price-filter__input--to input-bg input-text " 
-                  type="text" 
-                  name="price-to"
-                  value="1000"
-                  >
-                  <span class="price-filter__currency">₴</span>
-                </label>
-              </div>
-              <input 
-                class="price-filter__range" 
-                id="price"
-                value=""
-                type="text" 
-                name="my_range" 
-                data-min="50"
-                data-max="1150"
-                data-from="100"
-                data-to="1000"
-              >
+            </div>
+          </li>
+          <li class="filters__item">
+            <h2 class="filters__subtitle subtitle">Предложения</h2>
+            <div class="filters__content">
+              <form class="offers-filter" action="#" name="offers-form" method="GET">
+                <ul class="offers__list">
+                  <li class="filters__line offers__item">
+                    <label class="offers-filter__label checkbox-label">
+                      <input class="offers-filter__input checkbox" type="checkbox" name="discount">
+                      <span class="offers-filter__checkbox input-bg fake-checkbox"></span>
+                      Со скидкой
+                    </label>
+                  </li>
+                  <li class="filters__line offers__item">
+                    <label class="offers-filter__label checkbox-label">
+                      <input class="offers-filter__input checkbox" type="checkbox" name="news">
+                      <span class="offers-filter__checkbox input-bg fake-checkbox"></span>
+                      Новинка
+                    </label>
+                  </li>
+                  <li class="filters__line offers__item">
+                    <label class="offers-filter__label checkbox-label">
+                      <input class="offers-filter__input checkbox" type="checkbox" name="hits">
+                      <span class="offers-filter__checkbox input-bg fake-checkbox"></span>
+                      Хит
+                    </label>
+                  </li>
+                </ul>
             </form>
-          </div>
-        </li>
-      </ul>
-      <div class="dishes__content">
+            </div>
+          </li>
+          <li class="filters__item">
+            <h2 class="filters__subtitle subtitle">Цена</h2>
+            <div class="filters__content">
+              <form class="price-filter" action="#" name="price-form" method="GET">
+                <div class="price-filter__wrap">
+                  <label class="price-filter__label">от
+                    <input 
+                      class="price-filter__input price-filter__input--from input-bg input-text " 
+                      type="text" 
+                      name="price-from"
+                      id="price-from"
+                      value="100"
+                    >
+                    <span class="price-filter__currency">₴</span>
+                  </label>
+                  <label class="price-filter__label">до
+                    <input 
+                    class="price-filter__input price-filter__input--to input-bg input-text " 
+                    type="text" 
+                    name="price-to"
+                    value="1000"
+                    >
+                    <span class="price-filter__currency">₴</span>
+                  </label>
+                </div>
+                <input 
+                  class="price-filter__range" 
+                  id="price"
+                  value=""
+                  type="text" 
+                  name="my_range" 
+                  data-min="50"
+                  data-max="1150"
+                  data-from="100"
+                  data-to="1000"
+                >
+              </form>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="dishes__food-wrap">
         <ul class="dishes__food-list food-list">
           <li class="food-list__item">
             <article class="product-card">
@@ -556,33 +570,33 @@
           </li>          
         </ul>
         <div class="pagination">
-          <a class="pagination__nav pagination__link pagination__nav--no-active input-bg" href="#">
+          <button class="pagination__nav pagination__btn pagination__nav--no-active input-bg" href="#">
             <svg class="pagination__arrow pagination__arrow--prev">
               <use href="images/sprite.svg#nav-chevron-icon"></use>
             </svg>
-          </a>
+          </button>
           <ul class="pagination__list">
             <li class="pagination__item">
-              <a class="pagination__link pagination__link--active input-bg input-text" href="#">1</a>
+              <button class="pagination__btn pagination__btn--active input-bg input-text" href="#">1</button>
             </li>
             <li class="pagination__item">
-              <a class="pagination__link input-bg input-text" href="#">2</a>
+              <button class="pagination__btn input-bg input-text" href="#">2</button>
             </li>
             <li class="pagination__item">
-              <a class="pagination__link input-bg input-text" href="#">...</a>
+              <button class="pagination__btn input-bg input-text" href="#">...</button>
             </li>
             <li class="pagination__item">
-              <a class="pagination__link input-bg input-text" href="#">9</a>
+              <button class="pagination__btn input-bg input-text" href="#">9</button>
             </li>
             <li class="pagination__item">
-              <a class="pagination__link input-bg input-text" href="#">10</a>
+              <button class="pagination__btn input-bg input-text" href="#">10</button>
             </li>
           </ul>
-          <a class="pagination__nav pagination__link input-bg" href="#">
+          <button class="pagination__nav pagination__btn input-bg" href="#">
             <svg class="pagination__arrow pagination__arrow--next">
               <use href="images/sprite.svg#nav-chevron-icon"></use>
             </svg>
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -639,70 +653,75 @@
     <section class="promotions section">
   <div class="container">
     <h2 class="promotions__title title">Акции и скидки</h2>
-    <ul class="promotions__list restaurants-list">
-      <li class="promotions__item">
-        <a
-          class="promotions__link"
-          href="#"
-          rel="noopener noreferrer"
-          target="_blank"
-          aria-label="Перейти в ресторан"
-        >
-          <article class="restaurant-card">
-            <img
-              class="restaurant-card__img"
-              src="images/content/restaurants/blaze-pizza.jpg"
-              alt="Blaze Pizza"
-            />
-            <div class="restaurant-card__inner">
-              <p class="promotions__text">Скидка 50% на вторую пиццу</p>
-            </div>
-          </article>
-        </a>
-      </li>
-      <li class="promotions__item">
-        <a
-          class="promotions__link"
-          href="#"
-          rel="noopener noreferrer"
-          target="_blank"
-          aria-label="Перейти в ресторан"
-        >
-          <article class="restaurant-card">
-            <img
-              class="restaurant-card__img"
-              src="images/content/restaurants/kfc.jpg"
-              alt="KFC"
-            />
-            <div class="restaurant-card__inner">
-              <p class="promotions__text">
-                Картошечка из KFC даром при заказе бургера
-              </p>
-            </div>
-          </article>
-        </a>
-      </li>
-      <li class="promotions__item">
-        <a
-          class="promotions__link"
-          href="#"
-          rel="noopener noreferrer"
-          target="_blank"
-          aria-label="Перейти в ресторан"
-        >
-          <article class="restaurant-card">
-            <img
-              class="restaurant-card__img"
-              src="images/content/restaurants/star-burgers.jpg"
-              alt="Star Burgers"
-            />
-            <div class="restaurant-card__inner">
-              <p class="promotions__text">Чёрные бургеры на чёрный день</p>
-            </div>
-          </article>
-        </a>
-      </li>
-    </ul>
+    <div class="promotions__swiper swiper">
+      <button class="swiper-button-prev"></button>
+      <ul class="promotions__restaurants-list restaurants-list swiper-wrapper">
+        <li class="restaurants-list__item swiper-slide">
+          <a
+            class="promotions__link"
+            href="#"
+            rel="noopener noreferrer"
+            target="_blank"
+            aria-label="Перейти в ресторан"
+          >
+            <article class="restaurant-card">
+              <img
+                class="restaurant-card__img"
+                src="images/content/restaurants/blaze-pizza.jpg"
+                alt="Blaze Pizza"
+              />
+              <div class="restaurant-card__inner">
+                <p class="promotions__text">Скидка 50% на вторую пиццу</p>
+              </div>
+            </article>
+          </a>
+        </li>
+        <li class="restaurants-list__item swiper-slide">
+          <a
+            class="promotions__link"
+            href="#"
+            rel="noopener noreferrer"
+            target="_blank"
+            aria-label="Перейти в ресторан"
+          >
+            <article class="restaurant-card">
+              <img
+                class="restaurant-card__img"
+                src="images/content/restaurants/kfc.jpg"
+                alt="KFC"
+              />
+              <div class="restaurant-card__inner">
+                <p class="promotions__text">
+                  Картошечка из KFC даром при заказе бургера
+                </p>
+              </div>
+            </article>
+          </a>
+        </li>
+        <li class="restaurants-list__item swiper-slide">
+          <a
+            class="promotions__link"
+            href="#"
+            rel="noopener noreferrer"
+            target="_blank"
+            aria-label="Перейти в ресторан"
+          >
+            <article class="restaurant-card">
+              <img
+                class="restaurant-card__img"
+                src="images/content/restaurants/star-burgers.jpg"
+                alt="Star Burgers"
+              />
+              <div class="restaurant-card__inner">
+                <p class="promotions__text">Чёрные бургеры на чёрный день</p>
+              </div>
+            </article>
+          </a>
+        </li>
+      </ul>
+      <button class="swiper-button-next"></button>
+      <div class="swiper-pagination"></div>
+    </div>
   </div>
 </section>
 
@@ -718,7 +737,7 @@
         <form class="subscrip-form" action="#" name="subscrip-form" method="POST">
   <label for="email" aria-label="Ваш email"></label>
   <input
-    class="subscrip-form__input"
+    class="subscrip-form__input input-style"
     type="email"
     id="email"
     name="email"
