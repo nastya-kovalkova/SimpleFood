@@ -3,6 +3,7 @@
     <h2 class="title popular__title">Популярные блюда</h2>
     <div class="popular__swiper swiper">
       <ul class="popular__categories-filter categories-filter swiper-wrapper"> 
+        <!-- уже перед отправкой заметила косячок, что вконце слайдера последняя кнопка не хочет показываться. Уже не стала все менять, попробовала, но не вышло( -->
         <li class="categories-filter__item swiper-slide">
           <button 
             class="popular__category-btn categories-filter__event" 
@@ -77,9 +78,9 @@
         </li>
       </ul>
     </div>
-     @include("parts/_food-list.html", {
-      "elemClass": "popular__food-list"
-     })    
-    <button class="popular__btn link-status" type="button">Показать еще</button>
+    @include("parts/_food-list.html", {
+    "elemClass": "popular__food-list"
+    })    
+    <button class="popular__btn link-status details-btn" type="button">Показать еще</button>
   </div>
 </section>

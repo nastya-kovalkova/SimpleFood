@@ -1,0 +1,66 @@
+.burger-btn {
+  display: none;
+  padding: 12px 7px;
+
+  &:active {
+    .burger-btn__icon {
+      stroke: $accent-color;
+    }
+  }
+
+  &__icon {
+    margin-left: auto;
+    width: 30px;
+    height: 20px;
+    stroke: $main-color;
+    stroke-width: 2px;
+    transition: stroke 0.2s linear;
+  }
+
+  @include mq("tablet") {
+    display: block;
+  }
+}
+
+.close-btn {
+  padding: 13px;
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+    fill: $main-color;
+
+    &:active {
+      fill: $accent-color;
+    }
+  }
+}
+
+.filter-btn {
+  display: none;
+  padding: 7px 8px;
+  height: 100%;
+  border-radius: 3px;
+  background-color: $input-color;
+  transition: background-color 0.3s linear;
+
+  &:active {
+    background-color: $accent-color;
+
+    .filter-btn__icon {
+      fill: $btn-inner-color;
+    }
+  }
+
+  &__icon {
+    margin-left: auto;
+    width: 32px;
+    height: 34px;
+    fill: $accent-color;
+    transition: fill 0.3s linear;
+  }
+
+  @include mq("tablet-2") {
+    display: block;
+  }
+}

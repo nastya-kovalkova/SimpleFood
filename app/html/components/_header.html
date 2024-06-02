@@ -42,13 +42,13 @@
               </button>
             </li>
           </ul>
-          <button class="burger-menu" type="button">
-            <svg class="burger-menu__icon">
+          <button class="burger-btn" type="button">
+            <svg class="burger-btn__icon">
               <use
                 xlink:href="images/sprite.svg#burger-menu-icon"
               ></use>
             </svg>
-          </button>   
+          </button>             
         </div>     
       </nav>
     </div>
@@ -58,8 +58,8 @@
       @include("parts/_logo.html", {
         "elemClass": "mobile-menu__logo"
       }) 
-      <button class="mobile-menu__btn-close">
-        <svg class="mobile-menu__btn-icon">
+      <button class="mobile-menu__close-btn close-btn">
+        <svg class="close-btn__icon">
           <use xlink:href="images/sprite.svg#cross-icon"></use>
         </svg>
       </button>

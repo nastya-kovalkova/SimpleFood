@@ -3,16 +3,13 @@
   flex-direction: column;
 
   &__input {
+    width: 200px;
     padding: 12px 14px;
     margin-bottom: 12px;
     font-size: 14px;
-    border: 1px solid $decor-color-1;
-    @extend %style-focus;
-    transition: border 0.3s linear, box-shadow 0.3s linear;
 
     &::placeholder {
       color: $decor-color-1;
-      transition: color 0.3s linear;
     }
   }
 

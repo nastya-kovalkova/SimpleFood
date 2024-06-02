@@ -72,13 +72,13 @@
               </button>
             </li>
           </ul>
-          <button class="burger-menu" type="button">
-            <svg class="burger-menu__icon">
+          <button class="burger-btn" type="button">
+            <svg class="burger-btn__icon">
               <use
                 xlink:href="images/sprite.svg#burger-menu-icon"
               ></use>
             </svg>
-          </button>   
+          </button>             
         </div>     
       </nav>
     </div>
@@ -89,8 +89,8 @@
   <img class="logo__img" src="images/logo.svg" alt="Логотип" />
 </a>
  
-      <button class="mobile-menu__btn-close">
-        <svg class="mobile-menu__btn-icon">
+      <button class="mobile-menu__close-btn close-btn">
+        <svg class="close-btn__icon">
           <use xlink:href="images/sprite.svg#cross-icon"></use>
         </svg>
       </button>
@@ -207,6 +207,7 @@
     <h2 class="title popular__title">Популярные блюда</h2>
     <div class="popular__swiper swiper">
       <ul class="popular__categories-filter categories-filter swiper-wrapper"> 
+        <!-- уже перед отправкой заметила косячок, что вконце слайдера последняя кнопка не хочет показываться. Уже не стала все менять, попробовала, но не вышло( -->
         <li class="categories-filter__item swiper-slide">
           <button 
             class="popular__category-btn categories-filter__event" 
@@ -281,7 +282,7 @@
         </li>
       </ul>
     </div>
-     <ul class="popular__food-list food-list">
+    <ul class="popular__food-list food-list">
   <li class="food-list__item mix category-b">
     <article class="product-card">
   <a class="product-card__link" href="product.html">
@@ -473,7 +474,7 @@
 
   </li>
 </ul>    
-    <button class="popular__btn link-status" type="button">Показать еще</button>
+    <button class="popular__btn link-status details-btn" type="button">Показать еще</button>
   </div>
 </section>
 
@@ -518,164 +519,169 @@
     <section class="restaurants section">
   <div class="container">
     <h2 class="title">Лучшие рестораны</h2>
-    <ul class="restaurants-list">
-      <li class="restaurants-list__item">
-        <article class="restaurant-card">
-          <img
-            class="restaurant-card__img"
-            src="images/content/restaurants/blaze-pizza.jpg"
-            alt="Blaze Pizza"
-          />
-          <div class="restaurant-card__inner">
-            <h3 class="restaurant-card__name">Blaze Pizza</h3>
-            <div class="restaurant-card__wrap">
-              <span class="restaurant-card__hours">11:00 - 22:00</span>
-              <a
-                class="restaurant-card__link default-btn"
-                href="#"
-                rel="noopener noreferrer"
-                target="_blank"
-                aria-label="Перейти в ресторан"
-              >
-                <svg class="restaurant-card__link-icon">
-                  <use xlink:href="images/sprite.svg#arrow-icon"></use>
-                </svg>
-              </a>
+    <div class="restaurants__swiper swiper">
+      <button class="swiper-button-prev"></button>
+      <ul class="restaurants-list swiper-wrapper">
+        <li class="restaurants-list__item swiper-slide">
+          <article class="restaurant-card">
+            <img
+              class="restaurant-card__img"
+              src="images/content/restaurants/blaze-pizza.jpg"
+              alt="Blaze Pizza"
+            />
+            <div class="restaurant-card__inner">
+              <h3 class="restaurant-card__name">Blaze Pizza</h3>
+              <div class="restaurant-card__wrap">
+                <span class="restaurant-card__hours">11:00 - 22:00</span>
+                <a
+                  class="restaurant-card__link default-btn"
+                  href="#"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  aria-label="Перейти в ресторан"
+                >
+                  <svg class="restaurant-card__link-icon">
+                    <use xlink:href="images/sprite.svg#arrow-icon"></use>
+                  </svg>
+                </a>
+              </div>
             </div>
-          </div>
-        </article>
-      </li>
-      <li class="restaurants-list__item">
-        <article class="restaurant-card">
-          <img
-            class="restaurant-card__img"
-            src="images/content/restaurants/pizza-runcho.jpg"
-            alt="Pizza Runcho"
-          />
-          <div class="restaurant-card__inner">
-            <h3 class="restaurant-card__name">Pizza Runcho</h3>
-            <div class="restaurant-card__wrap">
-              <span class="restaurant-card__hours">12:00 - 21:00</span>
-              <a
-                class="restaurant-card__link default-btn"
-                href="#"
-                rel="noopener noreferrer"
-                target="_blank"
-                aria-label="Перейти в ресторан"
-              >
-                <svg class="restaurant-card__link-icon">
-                  <use xlink:href="images/sprite.svg#arrow-icon"></use>
-                </svg>
-              </a>
+          </article>
+        </li>
+        <li class="restaurants-list__item swiper-slide">
+          <article class="restaurant-card">
+            <img
+              class="restaurant-card__img"
+              src="images/content/restaurants/pizza-runcho.jpg"
+              alt="Pizza Runcho"
+            />
+            <div class="restaurant-card__inner">
+              <h3 class="restaurant-card__name">Pizza Runcho</h3>
+              <div class="restaurant-card__wrap">
+                <span class="restaurant-card__hours">12:00 - 21:00</span>
+                <a
+                  class="restaurant-card__link default-btn"
+                  href="#"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  aria-label="Перейти в ресторан"
+                >
+                  <svg class="restaurant-card__link-icon">
+                    <use xlink:href="images/sprite.svg#arrow-icon"></use>
+                  </svg>
+                </a>
+              </div>
             </div>
-          </div>
-        </article>
-      </li>
-      <li class="restaurants-list__item">
-        <article class="restaurant-card">
-          <img
-            class="restaurant-card__img"
-            src="images/content/restaurants/pizza-hut.jpg"
-            alt="Pizza Hut"
-          />
-          <div class="restaurant-card__inner">
-            <h3 class="restaurant-card__name">Pizza Hut</h3>
-            <div class="restaurant-card__wrap">
-              <span class="restaurant-card__hours">11:00 - 22:00</span>
-              <a
-                class="restaurant-card__link default-btn"
-                href="#"
-                rel="noopener noreferrer"
-                target="_blank"
-                aria-label="Перейти в ресторан"
-              >
-                <svg class="restaurant-card__link-icon">
-                  <use xlink:href="images/sprite.svg#arrow-icon"></use>
-                </svg>
-              </a>
+          </article>
+        </li>
+        <li class="restaurants-list__item swiper-slide">
+          <article class="restaurant-card">
+            <img
+              class="restaurant-card__img"
+              src="images/content/restaurants/pizza-hut.jpg"
+              alt="Pizza Hut"
+            />
+            <div class="restaurant-card__inner">
+              <h3 class="restaurant-card__name">Pizza Hut</h3>
+              <div class="restaurant-card__wrap">
+                <span class="restaurant-card__hours">11:00 - 22:00</span>
+                <a
+                  class="restaurant-card__link default-btn"
+                  href="#"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  aria-label="Перейти в ресторан"
+                >
+                  <svg class="restaurant-card__link-icon">
+                    <use xlink:href="images/sprite.svg#arrow-icon"></use>
+                  </svg>
+                </a>
+              </div>
             </div>
-          </div>
-        </article>
-      </li>
-      <li class="restaurants-list__item">
-        <article class="restaurant-card">
-          <img
-            class="restaurant-card__img"
-            src="images/content/restaurants/mcdonalds.jpg"
-            alt="McDonald`s"
-          />
-          <div class="restaurant-card__inner">
-            <h3 class="restaurant-card__name">McDonald`s</h3>
-            <div class="restaurant-card__wrap">
-              <span class="restaurant-card__hours">06:00 - 23:00</span>
-              <a
-                class="restaurant-card__link default-btn"
-                href="#"
-                rel="noopener noreferrer"
-                target="_blank"
-                aria-label="Перейти в ресторан"
-              >
-                <svg class="restaurant-card__link-icon">
-                  <use xlink:href="images/sprite.svg#arrow-icon"></use>
-                </svg>
-              </a>
+          </article>
+        </li>
+        <li class="restaurants-list__item swiper-slide">
+          <article class="restaurant-card">
+            <img
+              class="restaurant-card__img"
+              src="images/content/restaurants/mcdonalds.jpg"
+              alt="McDonald`s"
+            />
+            <div class="restaurant-card__inner">
+              <h3 class="restaurant-card__name">McDonald`s</h3>
+              <div class="restaurant-card__wrap">
+                <span class="restaurant-card__hours">06:00 - 23:00</span>
+                <a
+                  class="restaurant-card__link default-btn"
+                  href="#"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  aria-label="Перейти в ресторан"
+                >
+                  <svg class="restaurant-card__link-icon">
+                    <use xlink:href="images/sprite.svg#arrow-icon"></use>
+                  </svg>
+                </a>
+              </div>
             </div>
-          </div>
-        </article>
-      </li>
-      <li class="restaurants-list__item">
-        <article class="restaurant-card">
-          <img
-            class="restaurant-card__img"
-            src="images/content/restaurants/kfc.jpg"
-            alt="KFC"
-          />
-          <div class="restaurant-card__inner">
-            <h3 class="restaurant-card__name">KFC</h3>
-            <div class="restaurant-card__wrap">
-              <span class="restaurant-card__hours">06:00 - 23:30</span>
-              <a
-                class="restaurant-card__link default-btn"
-                href="#"
-                rel="noopener noreferrer"
-                target="_blank"
-                aria-label="Перейти в ресторан"
-              >
-                <svg class="restaurant-card__link-icon">
-                  <use xlink:href="images/sprite.svg#arrow-icon"></use>
-                </svg>
-              </a>
+          </article>
+        </li>
+        <li class="restaurants-list__item swiper-slide">
+          <article class="restaurant-card">
+            <img
+              class="restaurant-card__img"
+              src="images/content/restaurants/kfc.jpg"
+              alt="KFC"
+            />
+            <div class="restaurant-card__inner">
+              <h3 class="restaurant-card__name">KFC</h3>
+              <div class="restaurant-card__wrap">
+                <span class="restaurant-card__hours">06:00 - 23:30</span>
+                <a
+                  class="restaurant-card__link default-btn"
+                  href="#"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  aria-label="Перейти в ресторан"
+                >
+                  <svg class="restaurant-card__link-icon">
+                    <use xlink:href="images/sprite.svg#arrow-icon"></use>
+                  </svg>
+                </a>
+              </div>
             </div>
-          </div>
-        </article>
-      </li>
-      <li class="restaurants-list__item">
-        <article class="restaurant-card">
-          <img
-            class="restaurant-card__img"
-            src="images/content/restaurants/star-burgers.jpg"
-            alt="Star Burgers"
-          />
-          <div class="restaurant-card__inner">
-            <h3 class="restaurant-card__name">Star Burgers</h3>
-            <div class="restaurant-card__wrap">
-              <span class="restaurant-card__hours">09:00 - 21:00</span>
-              <a
-                class="restaurant-card__link default-btn"
-                href="#"
-                rel="noopener noreferrer"
-                target="_blank"
-                aria-label="Перейти в ресторан"
-              >
-                <svg class="restaurant-card__link-icon">
-                  <use xlink:href="images/sprite.svg#arrow-icon"></use>
-                </svg>
-              </a>
+          </article>
+        </li>
+        <li class="restaurants-list__item swiper-slide">
+          <article class="restaurant-card">
+            <img
+              class="restaurant-card__img"
+              src="images/content/restaurants/star-burgers.jpg"
+              alt="Star Burgers"
+            />
+            <div class="restaurant-card__inner">
+              <h3 class="restaurant-card__name">Star Burgers</h3>
+              <div class="restaurant-card__wrap">
+                <span class="restaurant-card__hours">09:00 - 21:00</span>
+                <a
+                  class="restaurant-card__link default-btn"
+                  href="#"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  aria-label="Перейти в ресторан"
+                >
+                  <svg class="restaurant-card__link-icon">
+                    <use xlink:href="images/sprite.svg#arrow-icon"></use>
+                  </svg>
+                </a>
+              </div>
             </div>
-          </div>
-        </article>
-      </li>
-    </ul>
+          </article>
+        </li>
+      </ul>
+      <button class="swiper-button-next"></button>
+      <div class="swiper-pagination"></div>
+    </div>
   </div>
 </section>
 
@@ -683,85 +689,87 @@
     <section class="reviews section">
   <div class="container">
     <h2 class="title">Отзывы клиентов</h2>
-    <ul class="reviews__slider slider">
-      <li class="reviews__item">
-        <div class="reviews__content">
-          <img
-            class="reviews__photo"
-            src="images/content/reviewers/daria.jpg"
-            alt="Фото Дарьи"
-          />
-          <figure class="reviews__inner">
-            <blockquote class="reviews__text">
-              SimpleFood - одна из лучших служб доставки продуктов из ресторанов
-              в городе. Очень удобный сайт и приложение. Их доставщики очень
-              вежливы и пунктуальны. Компания часто проводит акции и дарит
-              скидки на доставку - однозначно рекомендую!
-            </blockquote>
-            <figcaption class="reviews__author">Дарья</figcaption>
-            <cite class="reviews__author-desc">Ценитель вкусной еды</cite>
-          </figure>
-        </div>
-      </li>
-      <li class="reviews__item">
-        <div class="reviews__content">
-          <img
-            class="reviews__photo"
-            src="images/content/reviewers/daria.jpg"
-            alt="Фото Дарьи"
-          />
-          <figure class="reviews__inner">
-            <blockquote class="reviews__text">
-              SimpleFood - одна из лучших служб доставки продуктов из ресторанов
-              в городе. Очень удобный сайт и приложение. Их доставщики очень
-              вежливы и пунктуальны. Компания часто проводит акции и дарит
-              скидки на доставку - однозначно рекомендую!
-            </blockquote>
-            <figcaption class="reviews__author">Дарья</figcaption>
-            <cite class="reviews__author-desc">Ценитель вкусной еды</cite>
-          </figure>
-        </div>
-      </li>
-      <li class="reviews__item">
-        <div class="reviews__content">
-          <img
-            class="reviews__photo"
-            src="images/content/reviewers/daria.jpg"
-            alt="Фото Дарьи"
-          />
-          <figure class="reviews__inner">
-            <blockquote class="reviews__text">
-              SimpleFood - одна из лучших служб доставки продуктов из ресторанов
-              в городе. Очень удобный сайт и приложение. Их доставщики очень
-              вежливы и пунктуальны. Компания часто проводит акции и дарит
-              скидки на доставку - однозначно рекомендую!
-            </blockquote>
-            <figcaption class="reviews__author">Дарья</figcaption>
-            <cite class="reviews__author-desc">Ценитель вкусной еды</cite>
-          </figure>
-        </div>
-      </li>
-      <li class="reviews__item">
-        <div class="reviews__content">
-          <img
-            class="reviews__photo"
-            src="images/content/reviewers/daria.jpg"
-            alt="Фото Дарьи"
-          />
-          <figure class="reviews__inner">
-            <blockquote class="reviews__text">
-              SimpleFood - одна из лучших служб доставки продуктов из ресторанов
-              в городе. Очень удобный сайт и приложение. Их доставщики очень
-              вежливы и пунктуальны. Компания часто проводит акции и дарит
-              скидки на доставку - однозначно рекомендую!
-            </blockquote>
-            <figcaption class="reviews__author">Дарья</figcaption>
-            <cite class="reviews__author-desc">Ценитель вкусной еды</cite>
-          </figure>
-        </div>
-      </li>
-    </ul>
-    <div class="slider__nav"></div>
+    <div class="reviews__slider-box">
+      <ul class="reviews__slider slider">
+        <li class="reviews__item">
+          <div class="reviews__content">
+            <img
+              class="reviews__photo"
+              src="images/content/reviewers/daria.jpg"
+              alt="Фото Дарьи"
+            />
+            <figure class="reviews__inner">
+              <blockquote class="reviews__text">
+                SimpleFood - одна из лучших служб доставки продуктов из
+                ресторанов в городе. Очень удобный сайт и приложение. Их
+                доставщики очень вежливы и пунктуальны. Компания часто проводит
+                акции и дарит скидки на доставку - однозначно рекомендую!
+              </blockquote>
+              <figcaption class="reviews__author">Дарья</figcaption>
+              <cite class="reviews__author-desc">Ценитель вкусной еды</cite>
+            </figure>
+          </div>
+        </li>
+        <li class="reviews__item">
+          <div class="reviews__content">
+            <img
+              class="reviews__photo"
+              src="images/content/reviewers/daria.jpg"
+              alt="Фото Дарьи"
+            />
+            <figure class="reviews__inner">
+              <blockquote class="reviews__text">
+                SimpleFood - одна из лучших служб доставки продуктов из
+                ресторанов в городе. Очень удобный сайт и приложение. Их
+                доставщики очень вежливы и пунктуальны. Компания часто проводит
+                акции и дарит скидки на доставку - однозначно рекомендую!
+              </blockquote>
+              <figcaption class="reviews__author">Дарья</figcaption>
+              <cite class="reviews__author-desc">Ценитель вкусной еды</cite>
+            </figure>
+          </div>
+        </li>
+        <li class="reviews__item">
+          <div class="reviews__content">
+            <img
+              class="reviews__photo"
+              src="images/content/reviewers/daria.jpg"
+              alt="Фото Дарьи"
+            />
+            <figure class="reviews__inner">
+              <blockquote class="reviews__text">
+                SimpleFood - одна из лучших служб доставки продуктов из
+                ресторанов в городе. Очень удобный сайт и приложение. Их
+                доставщики очень вежливы и пунктуальны. Компания часто проводит
+                акции и дарит скидки на доставку - однозначно рекомендую!
+              </blockquote>
+              <figcaption class="reviews__author">Дарья</figcaption>
+              <cite class="reviews__author-desc">Ценитель вкусной еды</cite>
+            </figure>
+          </div>
+        </li>
+        <li class="reviews__item">
+          <div class="reviews__content">
+            <img
+              class="reviews__photo"
+              src="images/content/reviewers/daria.jpg"
+              alt="Фото Дарьи"
+            />
+            <figure class="reviews__inner">
+              <blockquote class="reviews__text">
+                SimpleFood - одна из лучших служб доставки продуктов из
+                ресторанов в городе. Очень удобный сайт и приложение. Их
+                доставщики очень вежливы и пунктуальны. Компания часто проводит
+                акции и дарит скидки на доставку - однозначно рекомендую!
+              </blockquote>
+              <figcaption class="reviews__author">Дарья</figcaption>
+              <cite class="reviews__author-desc">Ценитель вкусной еды</cite>
+            </figure>
+          </div>
+        </li>
+      </ul>
+      <div class="reviews__slider-nav slider-nav"></div>
+    </div>
   </div>
 </section>
 
@@ -823,7 +831,7 @@
         <form class="subscrip-form" action="#" name="subscrip-form" method="POST">
   <label for="email" aria-label="Ваш email"></label>
   <input
-    class="subscrip-form__input"
+    class="subscrip-form__input input-style"
     type="email"
     id="email"
     name="email"

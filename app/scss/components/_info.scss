@@ -1,7 +1,22 @@
 .info {
   &__inner {
-    @extend %flex-center;
-    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 10px;
+
+    @include mq("tablet-2") {
+      padding: 40px 0;
+      margin: 0;
+    }
+
+    @include mq("tablet") {
+      padding: 30px 0;
+    }
+
+    @include mq("phone") {
+      padding: 25px 0;
+    }
   }
 
   &__decor {
@@ -10,28 +25,42 @@
     max-width: 440px;
     background-image: url("../images/content/food-delivery.png");
     @include bg-image(contain);
-    margin-right: 120px;
+    margin-right: 30px;
+
+    @include mq("tablet-2") {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      height: 100%;
+      margin-right: 0;
+      opacity: 0.15;
+    }
   }
 
   &__content {
     max-width: 470px;
-  }
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
 
-  &__title,
-  &__text {
-    margin-bottom: 30px;
+    @include mq("tablet-2") {
+      margin-left: auto;
+    }
+
+    @include mq("phone") {
+      margin-right: auto;
+    }
   }
 
   &__title {
     text-align: left;
+    margin-bottom: 0;
   }
 
   &__text {
     opacity: 0.9;
-  }
-
-  &__benefits {
-    margin-bottom: 30px;
   }
 
   &__benefits-item {
@@ -40,8 +69,20 @@
     font-size: 24px;
     color: $main-color;
 
+    @include mq("phone") {
+      display: flex;
+      align-items: center;
+      height: 34px;
+      padding-left: 44px;
+      font-size: 18px;
+    }
+
     &:not(:last-child) {
       margin-bottom: 20px;
+
+      @include mq("phone") {
+        margin-bottom: 15px;
+      }
     }
 
     &::before {
@@ -79,5 +120,10 @@
 
   &__benefits-link {
     display: inline-block;
+
+    @include mq("phone") {
+      margin-right: auto;
+      padding: 12px 32px;
+    }
   }
 }

@@ -29,7 +29,16 @@
     gap: 6px;
   }
 
-  &__link {
+  &__item {
+    @include mq("phone") {
+      &:nth-child(2),
+      &:nth-last-child(2) {
+        display: none;
+      }
+    }
+  }
+
+  &__btn {
     @extend %flex-center;
     width: 48px;
     height: 48px;

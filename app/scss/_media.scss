@@ -5,6 +5,13 @@
     }
   }
 
+  .swiper-button-prev,
+  .swiper-button-next {
+    &:hover {
+      filter: $accent-filter;
+    }
+  }
+
   .details-btn {
     &:hover {
       text-decoration: underline transparent;
@@ -19,6 +26,14 @@
       &::before {
         filter: invert(57%) sepia(56%) saturate(4254%) hue-rotate(337deg)
           brightness(102%) contrast(101%);
+      }
+    }
+  }
+
+  .input-style {
+    &:hover {
+      &::placeholder {
+        color: $main-color;
       }
     }
   }
@@ -120,23 +135,19 @@
     }
   }
 
-  .offers-filter {
-    &__label {
-      &:hover {
-        color: $accent-color;
-      }
+  .checkbox-label {
+    &:hover {
+      color: $accent-color;
+    }
 
-      .offers-filter {
-        &__input {
-          &:hover + .offers-filter__checkbox {
-            border-color: $accent-color;
+    .checkbox {
+      &:hover + .fake-checkbox {
+        border-color: $accent-color;
 
-            //Неиспользовала миксин потому то с ним не срабатывает транзишн-фильтр почему-то
-            &::before {
-              filter: invert(48%) sepia(37%) saturate(1300%) hue-rotate(330deg)
-                brightness(103%) contrast(104%);
-            }
-          }
+        //Неиспользовала миксин потому то с ним не срабатывает транзишн-фильтр почему-то
+        &::before {
+          filter: invert(48%) sepia(37%) saturate(1300%) hue-rotate(330deg)
+            brightness(103%) contrast(104%);
         }
       }
     }
@@ -155,53 +166,23 @@
     }
   }
 
-  .slider {
+  .slider-nav {
     &__btn {
       &:hover {
         background-color: $action-color-2;
         border: 3px solid $action-color-3;
 
-        .slider__arrow {
+        .slider-nav__arrow {
           fill: $action-color-3;
         }
       }
     }
-
-    &__dots {
-      button {
-        &:hover {
-          box-shadow: $shadow-size rgba($fill-color, 0.7);
-        }
-      }
-    }
   }
 
-  .quantity-form {
-    &__action-btn {
+  .slider-dots {
+    button {
       &:hover {
-        box-shadow: inset $box-shadow;
-
-        .quantity-form__icon {
-          fill: $accent-color;
-        }
-      }
-    }
-  }
-
-  .subscrip-form {
-    &__input {
-      &:hover {
-        &::placeholder {
-          color: $main-color;
-        }
-      }
-    }
-
-    &__btn {
-      &:hover {
-        .subscrip-form__btn-icon {
-          fill: $accent-color;
-        }
+        box-shadow: $shadow-size rgba($fill-color, 0.7);
       }
     }
   }

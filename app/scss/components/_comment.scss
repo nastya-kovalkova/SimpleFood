@@ -1,0 +1,44 @@
+.comment {
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+
+    @include mq("phone") {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 15px 25px;
+    }
+  }
+
+  &__avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+
+  &__name {
+    font-weight: 500;
+    margin-bottom: 10px;
+
+    @include mq("phone") {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__date {
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: 0.03em;
+  }
+
+  &__rating {
+    margin-left: auto;
+
+    @include mq("phone") {
+      grid-column: span 2;
+      margin: 0;
+    }
+  }
+}

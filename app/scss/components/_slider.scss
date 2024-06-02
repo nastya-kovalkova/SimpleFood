@@ -1,8 +1,6 @@
-.slider {
-  &__nav {
-    @extend %flex-center;
-    gap: 20px;
-  }
+.slider-nav {
+  @extend %flex-center;
+  gap: 20px;
 
   &__btn {
     font-size: 0;
@@ -26,7 +24,7 @@
       border: 3px solid $accent-color;
       background-color: transparent;
 
-      .slider__arrow {
+      .slider-nav__arrow {
         fill: $accent-color;
       }
     }
@@ -36,7 +34,7 @@
       border-color: transparent;
       box-shadow: none;
 
-      .slider__arrow {
+      .slider-nav__arrow {
         fill: $fill-color;
       }
     }
@@ -53,27 +51,31 @@
       transform: scaleX(-1);
     }
   }
+}
 
-  &__dots {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 
-    .slick-active {
-      button {
-        background-color: $accent-color;
-      }
-    }
+  // @include mq("tablet") {
+  //   display: none;
+  // }
 
+  .slick-active {
     button {
-      display: block;
-      font-size: 0;
-      height: 15px;
-      width: 15px;
-      border-radius: 50%;
-      background-color: $decor-color-1;
-      cursor: pointer;
-      transition: box-shadow 0.3s linear, background-color 0.3s linear;
+      background-color: $accent-color;
     }
+  }
+
+  button {
+    display: block;
+    font-size: 0;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: $decor-color-1;
+    cursor: pointer;
+    transition: box-shadow 0.3s linear, background-color 0.3s linear;
   }
 }

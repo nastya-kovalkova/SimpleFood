@@ -1,0 +1,11 @@
+.dish-description {
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+
+      @include mq("tablet") {
+        margin-bottom: 25px;
+      }
+    }
+  }
+}

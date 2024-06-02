@@ -5,10 +5,13 @@ $main-filter: invert(19%) sepia(4%) saturate(5251%) hue-rotate(198deg)
 $accent-filter: invert(57%) sepia(56%) saturate(4254%) hue-rotate(337deg)
   brightness(102%) contrast(101%);
 $text-color: #31352b;
+$add-text-color: #505050;
 $fill-color: #ff7a50;
 $decor-color-1: #c2c2c2;
 $decor-color-2: #ececec;
 $btn-inner-color: #ffffff;
+$btn-inner-filter: invert(100%) sepia(8%) saturate(7488%) hue-rotate(261deg)
+  brightness(112%) contrast(107%);
 $page-color: #f9faff;
 $border-color: #e4e4e4;
 $main-font: "Rubik";

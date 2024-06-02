@@ -1,6 +1,22 @@
 .hero {
   margin-bottom: 60px;
 
+  @include mq("desktop") {
+    margin-bottom: 50px;
+  }
+
+  @include mq("tablet-2") {
+    margin-bottom: 40px;
+  }
+
+  @include mq("tablet") {
+    margin-bottom: 30px;
+  }
+
+  @include mq("phone") {
+    margin-bottom: 20px;
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;
@@ -10,7 +26,7 @@
 
     @include mq("tablet-2") {
       position: relative;
-      z-index: 1;
+      z-index: 0;
       padding: 100px 0;
 
       &::before {
@@ -65,6 +81,11 @@
     @include mq("tablet-2") {
       max-width: 400px;
       margin-bottom: 35px;
+    }
+
+    @include mq("phone") {
+      max-width: 350px;
+      margin-bottom: 20px;
     }
   }
 

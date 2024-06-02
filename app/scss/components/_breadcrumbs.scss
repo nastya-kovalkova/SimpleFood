@@ -9,6 +9,7 @@
 
   &__item {
     position: relative;
+
     &::after {
       @include pseudo;
       right: -12px;
@@ -25,6 +26,18 @@
       &::after {
         display: none;
       }
+
+      .breadcrumbs__link {
+        pointer-events: none;
+      }
+    }
+
+    @include mq("phone") {
+      display: none;
+      &:first-child,
+      &:last-child {
+        display: block;
+      }
     }
   }
 
@@ -34,6 +47,6 @@
     font-size: 14px;
     line-height: 1.2;
     letter-spacing: 0.03em;
-    color: #505050;
+    color: $add-text-color;
   }
 }

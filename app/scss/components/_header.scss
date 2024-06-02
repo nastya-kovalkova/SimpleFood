@@ -5,12 +5,20 @@
 .header {
   padding-top: 159px;
 
+  @include mq("desktop") {
+    padding-top: 138px;
+  }
+
   @include mq("tablet-2") {
     padding-top: 124px;
   }
 
   @include mq("tablet") {
     padding-top: 94px;
+  }
+
+  @include mq("phone") {
+    padding-top: 72px;
   }
 
   &__inner {
@@ -22,6 +30,10 @@
     padding: 57px 0;
     transition: box-shadow 0.3s linear, padding 0.3s linear;
 
+    @include mq("desktop") {
+      padding: 47px 0;
+    }
+
     @include mq("tablet-2") {
       padding: 40px 0;
     }
@@ -30,11 +42,19 @@
       padding: 25px 0;
     }
 
+    @include mq("phone") {
+      padding: 14px 0;
+    }
+
     &--mini {
       padding: 20px 0;
       box-shadow: 0 0 20px 5px rgba($accent-color, 0.5);
       background-color: rgba(249, 250, 255, 0.5);
       backdrop-filter: blur(20px);
+
+      @include mq("phone") {
+        padding: 14px 0;
+      }
     }
   }
 
@@ -46,32 +66,9 @@
     &--active {
       color: $accent-color;
     }
-  }
-}
 
-.burger-menu {
-  position: relative;
-  z-index: 1;
-  display: none;
-  width: 44px;
-  height: 44px;
-
-  &:active {
-    .burger-menu__icon {
-      stroke: $accent-color;
+    @include mq("tablet") {
+      padding: 11px 0;
     }
-  }
-
-  &__icon {
-    margin-left: auto;
-    width: 30px;
-    height: 20px;
-    stroke: $main-color;
-    stroke-width: 2px;
-    transition: stroke 0.2s linear;
-  }
-
-  @include mq("tablet") {
-    display: block;
   }
 }

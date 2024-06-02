@@ -62,6 +62,10 @@ textarea {
   outline: transparent;
 }
 
+textarea {
+  resize: none;
+}
+
 button {
   display: inline-block;
   appearance: none;
@@ -86,4 +90,8 @@ svg {
 .swiper-button-prev:after,
 .swiper-button-next:after {
   display: none;
+}
+
+.rating {
+  padding: 0;
 }
