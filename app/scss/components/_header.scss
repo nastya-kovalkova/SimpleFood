@@ -1,5 +1,7 @@
 @import "logo";
 @import "menu";
+@import "actions";
+@import "mobile-btns";
 @import "mobile-menu";
 
 .header {
@@ -58,17 +60,21 @@
     }
   }
 
+  &__logo {
+    margin-left: 5px;
+  }
+
   &__link {
     display: block;
     font-size: 18px;
     line-height: 1.2;
 
-    &--active {
-      color: $accent-color;
-    }
-
     @include mq("tablet") {
       padding: 11px 0;
+    }
+
+    &--active {
+      color: $accent-color;
     }
   }
 }

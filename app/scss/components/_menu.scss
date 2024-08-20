@@ -1,6 +1,3 @@
-@import "actions";
-@import "mobile-btns";
-
 .menu {
   @extend %flex-between;
 
@@ -16,11 +13,11 @@
   &__list {
     display: flex;
     gap: 45px;
-    margin-right: 63px;
+    margin-right: 50px;
 
     @include mq("tablet-2") {
       gap: 40px;
-      margin-right: 45px;
+      margin-right: 40px;
     }
 
     @include mq("tablet") {

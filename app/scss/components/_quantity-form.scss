@@ -28,23 +28,15 @@
     &--no-active {
       pointer-events: none;
       opacity: 0.5;
-
-      &:focus {
-        box-shadow: none;
-        background-color: $accent-color;
-
-        .quantity-form__icon {
-          fill: #fff;
-        }
-      }
     }
   }
 
-  &__icon {
+  &__action-icon {
     width: 20px;
     height: 20px;
     fill: $btn-inner-color;
     pointer-events: none;
+    transition: fill 0.3s linear;
   }
 
   &__form-btn {
@@ -52,5 +44,12 @@
       pointer-events: none;
       opacity: 0.5;
     }
+  }
+
+  &__btn-icon {
+    fill: none;
+    stroke: $btn-inner-color;
+    stroke-width: 1.5;
+    transition: stroke 0.3s linear;
   }
 }

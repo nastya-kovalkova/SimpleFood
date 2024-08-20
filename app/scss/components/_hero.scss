@@ -22,12 +22,13 @@
     flex-direction: column;
     justify-content: center;
     padding: 156px 0;
-    @include bg-image(contain, bottom right);
+    @include bg-image(560px 660px, bottom right);
 
     @include mq("tablet-2") {
       position: relative;
       z-index: 0;
       padding: 100px 0;
+      background-size: 454px 533px;
 
       &::before {
         @include pseudo;
@@ -40,10 +41,12 @@
 
     @include mq("tablet") {
       padding: 75px 0;
+      background-size: 392px 458px;
     }
 
     @include mq("phone") {
-      padding: 25px 0;
+      padding: 20px 0;
+      background-size: 254px 300px;
     }
   }
 

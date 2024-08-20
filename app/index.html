@@ -38,7 +38,7 @@
         <div class="menu__content">
           <ul class="menu__list">
             <li class="menu__item">
-              <a class="header__link menu__link menu__link--active link-status" href="index.html">Главная</a>
+              <a class="header__link menu__link header__link--active link-status" href="index.html">Главная</a>
             </li>
             <li class="menu__item">
               <a class="header__link menu__link  link-status" href="catalog.html">Блюда</a>
@@ -97,7 +97,7 @@
     </div>
     <ul class="mobile-menu__list">
       <li class="mobile-menu__item">
-        <a class="header__link menu__link--active link-status" href="index.html">Главная</a>
+        <a class="header__link header__link--active link-status" href="index.html">Главная</a>
       </li>
       <li class="mobile-menu__item">
         <a class="header__link  link-status" href="catalog.html">Блюда</a>
@@ -204,16 +204,17 @@
 
     <section class="popular section">
   <div class="container">
-    <h2 class="title popular__title">Популярные блюда</h2>
+    <h2 class="title popular__title">Популярные категории</h2>
     <div class="popular__swiper swiper">
-      <ul class="popular__categories-filter categories-filter swiper-wrapper"> 
-        <!-- уже перед отправкой заметила косячок, что вконце слайдера последняя кнопка не хочет показываться. Уже не стала все менять, попробовала, но не вышло( -->
+      <ul class="popular__categories-filter categories-filter swiper-wrapper">
         <li class="categories-filter__item swiper-slide">
           <button 
             class="popular__category-btn categories-filter__event" 
             type="button" 
             data-filter="all">
-              <span class="categories-filter__icon categories-filter__icon--burgers"></span>
+              <svg class="categories-filter__icon">
+                <use xlink:href="images/sprite.svg#burger-icon"></use>
+              </svg>              
             Бургеры
           </button>
         </li>
@@ -222,7 +223,9 @@
             class="popular__category-btn categories-filter__event" 
             type="button" 
             data-filter=".category-a">
-              <span class="categories-filter__icon categories-filter__icon--pizza"></span>
+              <svg class="categories-filter__icon">
+                <use xlink:href="images/sprite.svg#pizza-icon"></use>
+              </svg>              
             Пицца
           </button>
         </li>
@@ -231,7 +234,9 @@
             class="popular__category-btn categories-filter__event" 
             type="button" 
             data-filter=".category-b">
-              <span class="categories-filter__icon categories-filter__icon--sandwiches"></span>
+              <svg class="categories-filter__icon">
+                <use xlink:href="images/sprite.svg#sandwich-icon"></use>
+              </svg>              
             Сендвичи
           </button>
         </li>
@@ -240,7 +245,9 @@
             class="popular__category-btn categories-filter__event" 
             type="button" 
             data-filter=".category-c">
-              <span class="categories-filter__icon categories-filter__icon--asian-food"></span>
+              <svg class="categories-filter__icon">
+                <use xlink:href="images/sprite.svg#asian-icon"></use>
+              </svg>              
             Азиатская кухня
           </button>
         </li>
@@ -249,7 +256,9 @@
             class="popular__category-btn categories-filter__event" 
             type="button" 
             data-filter=".category-d">
-              <span class="categories-filter__icon categories-filter__icon--sets"></span>
+              <svg class="categories-filter__icon">
+                <use xlink:href="images/sprite.svg#sets-icon"></use>
+              </svg>              
             Cеты
           </button>
         </li>
@@ -258,7 +267,9 @@
             class="popular__category-btn categories-filter__event" 
             type="button" 
             data-filter=".category-e">
-              <span class="categories-filter__icon categories-filter__icon--sandwiches"></span>
+              <svg class="categories-filter__icon">
+                <use xlink:href="images/sprite.svg#sandwich-icon"></use>
+              </svg>              
             Сендвичи
           </button>
         </li>
@@ -267,7 +278,9 @@
             class="popular__category-btn categories-filter__event" 
             type="button" 
             data-filter=".category-f">
-              <span class="categories-filter__icon categories-filter__icon--asian-food"></span>
+              <svg class="categories-filter__icon">
+                <use xlink:href="images/sprite.svg#asian-icon"></use>
+              </svg>              
             Азиатская кухня
           </button>
         </li>
@@ -276,7 +289,9 @@
             class="popular__category-btn categories-filter__event" 
             type="button" 
             data-filter=".category-h">
-              <span class="categories-filter__icon categories-filter__icon--sets"></span>
+              <svg class="categories-filter__icon">
+                <use xlink:href="images/sprite.svg#sets-icon"></use>
+              </svg>              
             Cеты
           </button>
         </li>
@@ -482,7 +497,10 @@
     <section class="info section">
   <div class="container">
     <div class="info__inner">
-      <div class="info__decor"></div>
+      <div
+        class="info__decor"
+        style="background-image: url('images/content/food-delivery.png')"
+      ></div>
       <div class="info__content">
         <h2 class="title info__title">
           Оставайтесь дома,<br />
@@ -516,7 +534,7 @@
 </section>
 
 
-    <section class="restaurants section">
+    <section class="restaurants section section--swiper">
   <div class="container">
     <h2 class="title">Лучшие рестораны</h2>
     <div class="restaurants__swiper swiper">
@@ -527,17 +545,25 @@
             <img
               class="restaurant-card__img"
               src="images/content/restaurants/blaze-pizza.jpg"
+              width="370"
+              height="300"
               alt="Blaze Pizza"
             />
             <div class="restaurant-card__inner">
-              <h3 class="restaurant-card__name">Blaze Pizza</h3>
+              <h3 class="restaurant-card__subtitle">Blaze Pizza</h3>
               <div class="restaurant-card__wrap">
-                <span class="restaurant-card__hours">11:00 - 22:00</span>
+                <p class="restaurant-card__hours-inner">
+                  <time class="restaurant-card__hours" datetime="11:00"
+                    >11:00</time
+                  >
+                  -
+                  <time class="restaurant-card__hours" datetime="22:00"
+                    >22:00</time
+                  >
+                </p>
                 <a
                   class="restaurant-card__link default-btn"
                   href="#"
-                  rel="noopener noreferrer"
-                  target="_blank"
                   aria-label="Перейти в ресторан"
                 >
                   <svg class="restaurant-card__link-icon">
@@ -553,17 +579,25 @@
             <img
               class="restaurant-card__img"
               src="images/content/restaurants/pizza-runcho.jpg"
+              width="370"
+              height="300"
               alt="Pizza Runcho"
             />
             <div class="restaurant-card__inner">
-              <h3 class="restaurant-card__name">Pizza Runcho</h3>
+              <h3 class="restaurant-card__subtitle">Pizza Runcho</h3>
               <div class="restaurant-card__wrap">
-                <span class="restaurant-card__hours">12:00 - 21:00</span>
+                <p class="restaurant-card__hours-inner">
+                  <time class="restaurant-card__hours" datetime="12:00"
+                    >12:00</time
+                  >
+                  -
+                  <time class="restaurant-card__hours" datetime="21:00"
+                    >21:00</time
+                  >
+                </p>
                 <a
                   class="restaurant-card__link default-btn"
                   href="#"
-                  rel="noopener noreferrer"
-                  target="_blank"
                   aria-label="Перейти в ресторан"
                 >
                   <svg class="restaurant-card__link-icon">
@@ -579,17 +613,25 @@
             <img
               class="restaurant-card__img"
               src="images/content/restaurants/pizza-hut.jpg"
+              width="370"
+              height="300"
               alt="Pizza Hut"
             />
             <div class="restaurant-card__inner">
-              <h3 class="restaurant-card__name">Pizza Hut</h3>
+              <h3 class="restaurant-card__subtitle">Pizza Hut</h3>
               <div class="restaurant-card__wrap">
-                <span class="restaurant-card__hours">11:00 - 22:00</span>
+                <p class="restaurant-card__hours-inner">
+                  <time class="restaurant-card__hours" datetime="11:00"
+                    >11:00</time
+                  >
+                  -
+                  <time class="restaurant-card__hours" datetime="22:00"
+                    >22:00</time
+                  >
+                </p>
                 <a
                   class="restaurant-card__link default-btn"
                   href="#"
-                  rel="noopener noreferrer"
-                  target="_blank"
                   aria-label="Перейти в ресторан"
                 >
                   <svg class="restaurant-card__link-icon">
@@ -605,17 +647,25 @@
             <img
               class="restaurant-card__img"
               src="images/content/restaurants/mcdonalds.jpg"
+              width="370"
+              height="300"
               alt="McDonald`s"
             />
             <div class="restaurant-card__inner">
-              <h3 class="restaurant-card__name">McDonald`s</h3>
+              <h3 class="restaurant-card__subtitle">McDonald`s</h3>
               <div class="restaurant-card__wrap">
-                <span class="restaurant-card__hours">06:00 - 23:00</span>
+                <p class="restaurant-card__hours-inner">
+                  <time class="restaurant-card__hours" datetime="06:00"
+                    >06:00</time
+                  >
+                  -
+                  <time class="restaurant-card__hours" datetime="23:00"
+                    >23:00</time
+                  >
+                </p>
                 <a
                   class="restaurant-card__link default-btn"
                   href="#"
-                  rel="noopener noreferrer"
-                  target="_blank"
                   aria-label="Перейти в ресторан"
                 >
                   <svg class="restaurant-card__link-icon">
@@ -631,17 +681,25 @@
             <img
               class="restaurant-card__img"
               src="images/content/restaurants/kfc.jpg"
+              width="370"
+              height="300"
               alt="KFC"
             />
             <div class="restaurant-card__inner">
-              <h3 class="restaurant-card__name">KFC</h3>
+              <h3 class="restaurant-card__subtitle">KFC</h3>
               <div class="restaurant-card__wrap">
-                <span class="restaurant-card__hours">06:00 - 23:30</span>
+                <p class="restaurant-card__hours-inner">
+                  <time class="restaurant-card__hours" datetime="06:00"
+                    >06:00</time
+                  >
+                  -
+                  <time class="restaurant-card__hours" datetime="23:00"
+                    >23:00</time
+                  >
+                </p>
                 <a
                   class="restaurant-card__link default-btn"
                   href="#"
-                  rel="noopener noreferrer"
-                  target="_blank"
                   aria-label="Перейти в ресторан"
                 >
                   <svg class="restaurant-card__link-icon">
@@ -657,17 +715,25 @@
             <img
               class="restaurant-card__img"
               src="images/content/restaurants/star-burgers.jpg"
+              width="370"
+              height="300"
               alt="Star Burgers"
             />
             <div class="restaurant-card__inner">
-              <h3 class="restaurant-card__name">Star Burgers</h3>
+              <h3 class="restaurant-card__subtitle">Star Burgers</h3>
               <div class="restaurant-card__wrap">
-                <span class="restaurant-card__hours">09:00 - 21:00</span>
+                <p class="restaurant-card__hours-inner">
+                  <time class="restaurant-card__hours" datetime="09:00"
+                    >09:00</time
+                  >
+                  -
+                  <time class="restaurant-card__hours" datetime="21:00"
+                    >21:00</time
+                  >
+                </p>
                 <a
                   class="restaurant-card__link default-btn"
                   href="#"
-                  rel="noopener noreferrer"
-                  target="_blank"
                   aria-label="Перейти в ресторан"
                 >
                   <svg class="restaurant-card__link-icon">
@@ -696,6 +762,8 @@
             <img
               class="reviews__photo"
               src="images/content/reviewers/daria.jpg"
+              width="300"
+              height="300"
               alt="Фото Дарьи"
             />
             <figure class="reviews__inner">
@@ -705,8 +773,10 @@
                 доставщики очень вежливы и пунктуальны. Компания часто проводит
                 акции и дарит скидки на доставку - однозначно рекомендую!
               </blockquote>
-              <figcaption class="reviews__author">Дарья</figcaption>
-              <cite class="reviews__author-desc">Ценитель вкусной еды</cite>
+              <figcaption class="reviews__author">
+                Дарья
+                <span class="reviews__author-desc">Ценитель вкусной еды</span>
+              </figcaption>
             </figure>
           </div>
         </li>
@@ -715,6 +785,8 @@
             <img
               class="reviews__photo"
               src="images/content/reviewers/daria.jpg"
+              width="300"
+              height="300"
               alt="Фото Дарьи"
             />
             <figure class="reviews__inner">
@@ -724,8 +796,10 @@
                 доставщики очень вежливы и пунктуальны. Компания часто проводит
                 акции и дарит скидки на доставку - однозначно рекомендую!
               </blockquote>
-              <figcaption class="reviews__author">Дарья</figcaption>
-              <cite class="reviews__author-desc">Ценитель вкусной еды</cite>
+              <figcaption class="reviews__author">
+                Дарья
+                <span class="reviews__author-desc">Ценитель вкусной еды</span>
+              </figcaption>
             </figure>
           </div>
         </li>
@@ -734,6 +808,8 @@
             <img
               class="reviews__photo"
               src="images/content/reviewers/daria.jpg"
+              width="300"
+              height="300"
               alt="Фото Дарьи"
             />
             <figure class="reviews__inner">
@@ -743,8 +819,10 @@
                 доставщики очень вежливы и пунктуальны. Компания часто проводит
                 акции и дарит скидки на доставку - однозначно рекомендую!
               </blockquote>
-              <figcaption class="reviews__author">Дарья</figcaption>
-              <cite class="reviews__author-desc">Ценитель вкусной еды</cite>
+              <figcaption class="reviews__author">
+                Дарья
+                <span class="reviews__author-desc">Ценитель вкусной еды</span>
+              </figcaption>
             </figure>
           </div>
         </li>
@@ -753,6 +831,8 @@
             <img
               class="reviews__photo"
               src="images/content/reviewers/daria.jpg"
+              width="300"
+              height="300"
               alt="Фото Дарьи"
             />
             <figure class="reviews__inner">
@@ -762,8 +842,10 @@
                 доставщики очень вежливы и пунктуальны. Компания часто проводит
                 акции и дарит скидки на доставку - однозначно рекомендую!
               </blockquote>
-              <figcaption class="reviews__author">Дарья</figcaption>
-              <cite class="reviews__author-desc">Ценитель вкусной еды</cite>
+              <figcaption class="reviews__author">
+                Дарья
+                <span class="reviews__author-desc">Ценитель вкусной еды</span>
+              </figcaption>
             </figure>
           </div>
         </li>
@@ -792,8 +874,10 @@
               target="_blank"
             >
               <img
-                class="apps__img apps__img--app-store"
+                class="apps__img"
                 src="images/content/apps/app-store.svg"
+                width="120"
+                height="40"
                 alt="App Store"
               />
             </a>
@@ -806,15 +890,20 @@
               target="_blank"
             >
               <img
-                class="apps__img apps__img--google-play"
+                class="apps__img"
                 src="images/content/apps/google-play.svg"
+                width="135"
+                height="40"
                 alt="Google Play"
               />
             </a>
           </li>
         </ul>
       </div>
-      <div class="apps__decor"></div>
+      <div
+        class="apps__decor"
+        style="background-image: url('images/content/bg-app.jpg')"
+      ></div>
     </div>
   </div>
 </section>
@@ -842,6 +931,9 @@
     class="subscrip-form__btn default-btn default-btn--icon"
     type="submit"
   >
+    <svg class="subscrip-form__btn-icon default-btn-icon">
+      <use href="images/sprite.svg#subscrip-icon"></use>
+    </svg>
     Подписаться
   </button>
 </form>
@@ -849,112 +941,42 @@
       </div>
       <ul class="footer__menu">
         <li class="footer__menu-item">
-          <a
-            class="footer__menu-link link-status"
-            href="#"
-            rel="noopener noreferrer"
-            target="_blank"
-            >Как это работает</a
-          >
+          <a class="footer__menu-link link-status" href="#">Как это работает</a>
         </li>
         <li class="footer__menu-item">
-          <a
-            class="footer__menu-link link-status"
-            href="#"
-            rel="noopener noreferrer"
-            target="_blank"
-            >Продукты</a
-          >
+          <a class="footer__menu-link link-status" href="#">Продукты</a>
         </li>
         <li class="footer__menu-item">
-          <a
-            class="footer__menu-link link-status"
-            href="#"
-            rel="noopener noreferrer"
-            target="_blank"
-            >Блюда</a
-          >
+          <a class="footer__menu-link link-status" href="#">Блюда</a>
         </li>
         <li class="footer__menu-item">
-          <a
-            class="footer__menu-link link-status"
-            href="#"
-            rel="noopener noreferrer"
-            target="_blank"
-            >Меню</a
-          >
+          <a class="footer__menu-link link-status" href="#">Меню</a>
         </li>
         <li class="footer__menu-item">
-          <a
-            class="footer__menu-link link-status"
-            href="#"
-            rel="noopener noreferrer"
-            target="_blank"
-            >О нас</a
-          >
+          <a class="footer__menu-link link-status" href="#">О нас</a>
         </li>
         <li class="footer__menu-item">
-          <a
-            class="footer__menu-link link-status"
-            href="#"
-            rel="noopener noreferrer"
-            target="_blank"
-            >Новости</a
-          >
+          <a class="footer__menu-link link-status" href="#">Новости</a>
         </li>
         <li class="footer__menu-item">
-          <a
-            class="footer__menu-link link-status"
-            href="#"
-            rel="noopener noreferrer"
-            target="_blank"
-            >Партнеры</a
-          >
+          <a class="footer__menu-link link-status" href="#">Партнеры</a>
         </li>
         <li class="footer__menu-item">
-          <a
-            class="footer__menu-link link-status"
-            href="#"
-            rel="noopener noreferrer"
-            target="_blank"
-            >чаВо</a
-          >
+          <a class="footer__menu-link link-status" href="#">чаВо</a>
         </li>
         <li class="footer__menu-item">
-          <a
-            class="footer__menu-link link-status"
-            href="#"
-            rel="noopener noreferrer"
-            target="_blank"
+          <a class="footer__menu-link link-status" href="#"
             >Скачать приложение</a
           >
         </li>
         <li class="footer__menu-item">
-          <a
-            class="footer__menu-link link-status"
-            href="#"
-            rel="noopener noreferrer"
-            target="_blank"
-            >Блог</a
-          >
+          <a class="footer__menu-link link-status" href="#">Блог</a>
         </li>
         <li class="footer__menu-item">
-          <a
-            class="footer__menu-link link-status"
-            href="#"
-            rel="noopener noreferrer"
-            target="_blank"
-            >Что нового?</a
-          >
+          <a class="footer__menu-link link-status" href="#">Что нового?</a>
         </li>
         <li class="footer__menu-item">
-          <a
-            class="footer__menu-link link-status"
-            href="#"
-            rel="noopener noreferrer"
-            target="_blank"
-            >Карта сайта</a
-          >
+          <a class="footer__menu-link link-status" href="#">Карта сайта</a>
         </li>
       </ul>
       <address class="footer__contacts-info">

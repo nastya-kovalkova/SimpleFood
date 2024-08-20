@@ -13,5 +13,8 @@
     }
   }
 
-  @include icon-btn(subscrip);
+  &__btn-icon {
+    fill: $btn-inner-color;
+    transition: fill 0.3s linear;
+  }
 }

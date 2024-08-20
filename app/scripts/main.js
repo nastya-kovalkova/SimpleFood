@@ -7,7 +7,6 @@ if (doc.title == "Simple Food | Блюда") {
 }
 console.log(doc.title);
 
-// const restList = document.querySelector(".restaurants__swiper");
 let mql = window.matchMedia("(max-width: 767px)");
 let restSlider = new Swiper(restList, {
   slidesPerView: 1,
@@ -159,46 +158,6 @@ let tabsSwiper = new Swiper(tabsSlider, {
   },
 });
 
-// function doPagination() {
-//   const productsList = Array.from(
-//     document.querySelectorAll(".food-list__item")
-//   );
-//   let currentPage = 1;
-//   let productsNumber = 12;
-
-//   function displayList(arr, items, page) {
-//     const listEl = document.querySelector(".dishes__content");
-
-//     const start = items * page;
-//     const end = start + items;
-//     const paginatedData = arr.slice(start, end);
-
-//     for (let i = 0; i < paginatedData[i]; i++) {
-//       listEl.appendChild(paginatedData[i]);
-//     }
-//   }
-
-//   function displayPagintion(arr, items) {
-//     const listEl = document.querySelector(".pagination__list");
-//     const pagesCount = Math.ceil(arr.length / items);
-
-//     for (let i = 0; i < pagesCount; i++) {
-//       const itemEl = displayPaginationBtn(i + 1);
-//       listEl.appendChild(itemEl);
-//     }
-//   }
-
-//   function displayPaginationBtn(page) {
-//     const itemEl = document.createElement("li");
-//     itemEl.classList.add("pagination__item");
-//     itemEl.innerHTML = `<a class="pagination__item input-bg input-text">${page}</a>`;
-//   }
-
-//   displayList(productsList, productsNumber, currentPage);
-// }
-
-// doPagination();
-
 const btns = document.querySelectorAll(".quantity-form__action-btn");
 const inputEl = document.querySelector(".quantity-form__input");
 const btnMinus = document.querySelector(".quantity-form__action-btn--prev");
@@ -212,33 +171,24 @@ btns.forEach((btn) => {
     if (target.classList.contains("quantity-form__action-btn--prev")) {
       --inputValue;
       inputEl.value = inputValue;
-      if (inputValue == 0) {
-        // inputEl.setAttribute("disabled", ""); // Поочему не рабатывает?
 
+      if (inputValue === 0) {
+        inputEl.disabled = true;
         btnMinus.classList.add("quantity-form__action-btn--no-active");
         btnSubmit.classList.add("quantity-form__form-btn--no-active");
       }
     } else {
       inputValue++;
       inputEl.value = inputValue;
-      btnMinus.classList.remove("quantity-form__action-btn--no-active");
-      btnSubmit.classList.remove("quantity-form__form-btn--no-active");
+
+      if (inputValue > 0) {
+        inputEl.disabled = false;
+        btnMinus.classList.remove("quantity-form__action-btn--no-active");
+        btnSubmit.classList.remove("quantity-form__form-btn--no-active");
+      }
     }
   });
 });
-
-// const paginationItems = document.querySelectorAll(".pagination__item");
-// const paginationBtns = document.querySelectorAll(".pagination__nav");
-
-// if (paginationItems[0].children.classList.contains("pagination__btn--active")) {
-//   paginationBtns[0].classList.add("pagination__nav--no-active");
-// } else if (
-//   paginationItems[paginationItems.length - 1].children.classList.contains(
-//     "pagination__btn--active"
-//   )
-// ) {
-//   paginationBtns[1].classList.add("pagination__nav--no-active");
-// }
 
 $(function () {
   $(window).on("scroll", function () {
@@ -251,6 +201,25 @@ $(function () {
 
   $(function () {
     $(window).trigger("scroll");
+  });
+
+  $(function () {
+    $(document).on("mouseup", function (e) {
+      const $mobileMenu = $(".mobile-menu");
+      const $filters = $(".filters");
+      const $body = $("body");
+
+      if (
+        !$mobileMenu.is(e.target) &&
+        $mobileMenu.has(e.target).length === 0 &&
+        !$filters.is(e.target) &&
+        $filters.has(e.target).length === 0
+      ) {
+        $mobileMenu.removeClass("active");
+        $filters.removeClass("filters--mobile");
+        $body.removeClass("lock-bg");
+      }
+    });
   });
 
   $(".burger-btn").on("click", function () {
@@ -288,6 +257,7 @@ $(function () {
   $(function () {
     $(".reviews__slider").slick({
       dots: true,
+      infinite: false,
       dotsClass: "slider-dots",
       appendDots: ".slider-nav",
       appendArrows: ".slider-nav",
@@ -353,7 +323,6 @@ $(function () {
     $(".slider-nav__btn").removeClass("slider-nav__btn--active");
   });
 
-  //не понимаю почему не срабатвает, хотя в функции выше сработало
   $(".interest .slider-nav .slider-nav__btn--prev").removeClass(
     "slider-nav__btn--active"
   );

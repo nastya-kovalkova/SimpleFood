@@ -1,4 +1,4 @@
-<section class="breadcrumbs">
+<div class="breadcrumbs">
   <div class="container">
     <ul class="breadcrumbs__list">
       <li class="breadcrumbs__item">
@@ -12,12 +12,16 @@
       </li>
     </ul>
   </div>
-</section>
+</div>
 <section class="dish-card section">
   <div class="container">
     <div class="dish-card__wrap">
       <div class="dish-card__popup">
-        <button class="dish-card__close-btn close-btn">
+        <button
+          class="dish-card__close-btn close-btn"
+          type="button"
+          aria-label="Закрыть окно"
+        >
           <svg class="close-btn__icon">
             <use xlink:href="images/sprite.svg#cross-icon"></use>
           </svg>
@@ -75,9 +79,9 @@
             Окончательная сумма заказа формируется после сбора товаров.
           </li>
         </ul>
-        <button class="dish-card__list-btn details-btn link-status">
+        <a class="dish-card__list-link details-btn link-status" href="#">
           Подробнее
-        </button>
+        </a>
       </div>
     </div>
   </div>
@@ -150,55 +154,57 @@
           <div class="tabs__content-item" id="reviews">
             <h3 class="tabs__title">Мнения наших клиентов</h3>
             <ul class="tabs__dish-reviews dish-reviews">
-              <li class="dish-reviews__item">
-                <figure class="comment">
-                  <div class="comment__top">
-                    <img
-                      class="comment__avatar"
-                      src="images/content/no-avatar.jpg"
-                      alt="Аватар Андрея"
-                    />
-                    <div class="comment__info">
-                      <figcaption class="comment__name">Андрей</figcaption>
-                      <span class="comment__date">10.06.2021</span>
-                    </div>
-                    <div
-                      class="comment__rating rating"
-                      data-rateyo-rating="5"
-                    ></div>
-                  </div>
-                  <blockquote class="comment__text">
-                    Доставили быстро. Товар свежий и очень вкусный, буду
-                    пробовать еще!))
-                  </blockquote>
+              <li class="dish-reviews__comment comment">
+                <figure class="comment__figure">
+                  <img
+                    class="comment__avatar"
+                    src="images/content/no-avatar.jpg"
+                    width="70"
+                    height="70"
+                    alt="Аватар Андрея"
+                  />
+                  <figcaption class="comment__info">
+                    Андрей
+                    <time class="comment__date" datetime="2021-06-10"
+                      >10.06.2021</time
+                    >
+                  </figcaption>
                 </figure>
+                <div
+                  class="comment__rating rating"
+                  data-rateyo-rating="5"
+                ></div>
+                <blockquote class="comment__text">
+                  Доставили быстро. Товар свежий и очень вкусный, буду пробовать
+                  еще!))
+                </blockquote>
               </li>
-              <li class="dish-reviews__item">
-                <figure class="comment">
-                  <div class="comment__top">
-                    <img
-                      class="comment__avatar"
-                      src="images/content/no-avatar.jpg"
-                      alt="Аватар Андрея"
-                    />
-                    <div class="comment__info">
-                      <figcaption class="comment__name">
-                        Екатерина Белая
-                      </figcaption>
-                      <span class="comment__date">7.06.2021</span>
-                    </div>
-                    <div
-                      class="comment__rating rating"
-                      data-rateyo-rating="4"
-                    ></div>
-                  </div>
-                  <blockquote class="comment__text">
-                    этот бургер неплохой чтобы перекусить, когда нет возможности
-                    или времени что-нибудь приготовить. Это отличный вариант,
-                    чтобы съесть на ходу, но чтобы побаловать себя, я больше
-                    предпочту пиццу
-                  </blockquote>
+              <li class="dish-reviews__comment comment">
+                <figure class="comment__figure">
+                  <img
+                    class="comment__avatar"
+                    src="images/content/no-avatar.jpg"
+                    width="70"
+                    height="70"
+                    alt="Аватар Андрея"
+                  />
+                  <figcaption class="comment__info">
+                    Екатерина Белая
+                    <time class="comment__date" datetime="2021-06-07"
+                      >7.06.2021</time
+                    >
+                  </figcaption>
                 </figure>
+                <div
+                  class="comment__rating rating"
+                  data-rateyo-rating="4"
+                ></div>
+                <blockquote class="comment__text">
+                  этот бургер неплохой чтобы перекусить, когда нет возможности
+                  или времени что-нибудь приготовить. Это отличный вариант,
+                  чтобы съесть на ходу, но чтобы побаловать себя, я больше
+                  предпочту пиццу
+                </blockquote>
               </li>
             </ul>
             <form
@@ -207,15 +213,14 @@
               name="add-review-form"
             >
               <h3 class="tabs__title">Оставить отзыв</h3>
-              <label class="add-review__label"
-                >Ваша оценка *
+              <div class="add-review__rating-inner">
+                <label class="add-review__label">Ваша оценка *</label>
                 <div
                   class="add-review__rating rating"
                   data-rateyo-rating="0"
                   data-rateyo-read-only="false"
-                  required
                 ></div>
-              </label>
+              </div>
               <div class="add-review__row">
                 <div class="add-review__row-item add-review__row-item--review">
                   <label class="add-review__label" for="review"
@@ -263,10 +268,8 @@
                 <span
                   class="add-review__fake-checkbox input-style fake-checkbox"
                 ></span>
-                <p class="add-review__checkbox-text">
-                  Сохранить моё имя, email и адрес сайта в этом браузере для
-                  последующих моих комментариев.
-                </p>
+                Сохранить моё имя, email и адрес сайта в этом браузере для
+                последующих моих комментариев.
               </label>
               <button class="add-review__btn default-btn" type="submit">
                 Оставить отзыв

@@ -11,14 +11,15 @@
     display: block;
 
     &--checkbox {
-      display: flex;
+      font-size: 18px;
       margin-bottom: 30px;
     }
   }
 
-  &__rating {
-    display: inline-block;
-    margin-left: 15px;
+  &__rating-inner {
+    display: flex;
+    align-items: center;
+    gap: 15px;
   }
 
   &__input {
@@ -73,10 +74,6 @@
     &--review {
       gap: 0;
     }
-  }
-
-  &__checkbox-text {
-    font-size: 18px;
   }
 
   &__checkbox,
