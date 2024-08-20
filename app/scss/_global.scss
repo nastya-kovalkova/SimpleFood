@@ -45,14 +45,6 @@ body {
     }
   }
 
-  // @include mq("tablet-2") {
-  //   &::before {
-  //     @include pseudo(fixed);
-  //     z-index: 1000;
-  //     opacity: 0;
-  //   }
-  // }
-
   @include mq("tablet") {
     font-size: 18px;
   }
@@ -89,6 +81,26 @@ body {
 
   @include mq("phone") {
     padding: 20px 0;
+  }
+
+  &--swiper {
+    padding-bottom: 45px;
+
+    @include mq("desktop") {
+      padding-bottom: 35px;
+    }
+
+    @include mq("tablet-2") {
+      padding-bottom: 34px;
+    }
+
+    @include mq("tablet") {
+      padding-bottom: 24px;
+    }
+
+    @include mq("tablet") {
+      padding-bottom: 20px;
+    }
   }
 }
 
@@ -170,30 +182,24 @@ body {
   }
 
   &--icon {
-    position: relative;
-    padding: 13px 38px 13px 70px;
+    display: flex;
+    align-items: center;
+    padding: 13px 38px;
     font-weight: 500;
     font-size: 14px;
     letter-spacing: 0;
-    @include bg-image(cover);
-
-    &::before {
-      @include pseudo;
-      left: 38px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 16px;
-      height: 16px;
-      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(21deg)
-        brightness(102%) contrast(105%);
-      transition: filter 0.2s linear;
-    }
   }
 
   &:active {
     box-shadow: none;
     background-color: $action-color;
   }
+}
+
+.default-btn-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 15px;
 }
 
 .input-bg {

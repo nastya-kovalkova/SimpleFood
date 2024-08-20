@@ -1,4 +1,4 @@
-<section class="breadcrumbs">
+<div class="breadcrumbs">
   <div class="container">
     <ul class="breadcrumbs__list">
       <li class="breadcrumbs__item">
@@ -9,13 +9,13 @@
       </li>
     </ul>
   </div>
-</section>
+</div>
 <section class="dishes section">
   <div class="container">
     <div class="dishes__top">
       <h1 class="dishes__title title">Каталог продуктов</h1>
       <div class="dishes__top-inner">
-        <button class="filter-btn">
+        <button class="filter-btn" type="button" aria-label="Фильтры">
           <svg class="filter-btn__icon">
             <use xlink:href="images/sprite.svg#filter-icon"></use>
           </svg>
@@ -36,129 +36,124 @@
     </div>
     <div class="dishes__content">
       <div class="dishes__filters filters">
-        <button class="filters__close-btn close-btn">
+        <button 
+          class="filters__close-btn close-btn" 
+          type="button" 
+          aria-label="Закрыть">
           <svg class="close-btn__icon">
             <use xlink:href="images/sprite.svg#cross-icon"></use>
           </svg>
         </button>
-        <ul class="filters__list">
-          <li class="filters__item">
+        <div class="filters__inner">
+          <div class="filters__box">
             <h2 class="filters__subtitle subtitle">Категории</h2>
-            <div class="filters__content">
-              <ul class="filters__categories-filter categories-filter">
-                <li class="filters__line categories__item">
-                  <a class="categories-filter__event link-status" href="#">
-                    Бургеры
-                  </a>
-                </li>
-                <li class="filters__line categories__item">
-                  <a class="categories-filter__event link-status" href="#">
-                    Пицца
-                  </a>
-                </li>
-                <li class="filters__line categories__item">
-                  <a class="categories-filter__event link-status" href="#">
-                    Сендвичи
-                  </a>
-                </li>
-                <li class="filters__line categories__item">
-                  <a class="categories-filter__event link-status" href="#">
-                    Азиатская кухня
-                  </a>
-                </li>
-                <li class="filters__line categories__item">
-                  <a class="categories-filter__event link-status" href="#">
-                    Cеты
-                  </a>
-                </li>
-                <li class="filters__line categories__item">
-                  <a class="categories-filter__event link-status" href="#">
-                    Европейская кухня
-                  </a>
-                </li>
-                <li class="filters__line categories__item">
-                  <a class="categories-filter__event link-status" href="#">
-                    Напитки
-                  </a>
-                </li>
-                <li class="filters__line categories__item">
-                  <a class="categories-filter__event link-status" href="#">
-                    Алкоголь
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="filters__item">
+            <ul class="filters__list categories-filter">
+              <li class="filters__item categories-filter__item">
+                <a class="categories-filter__event link-status" href="#">
+                  Бургеры
+                </a>
+              </li>
+              <li class="filters__item categories-filter__item">
+                <a class="categories-filter__event link-status" href="#">
+                  Пицца
+                </a>
+              </li>
+              <li class="filters__item categories-filter__item">
+                <a class="categories-filter__event link-status" href="#">
+                  Сендвичи
+                </a>
+              </li>
+              <li class="filters__item categories-filter__item">
+                <a class="categories-filter__event link-status" href="#">
+                  Азиатская кухня
+                </a>
+              </li>
+              <li class="filters__item categories-filter__item">
+                <a class="categories-filter__event link-status" href="#">
+                  Cеты
+                </a>
+              </li>
+              <li class="filters__item categories-filter__item">
+                <a class="categories-filter__event link-status" href="#">
+                  Европейская кухня
+                </a>
+              </li>
+              <li class="filters__item categories-filter__item">
+                <a class="categories-filter__event link-status" href="#">
+                  Напитки
+                </a>
+              </li>
+              <li class="filters__item categories-filter__item">
+                <a class="categories-filter__event link-status" href="#">
+                  Алкоголь
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="filters__box">
             <h2 class="filters__subtitle subtitle">Предложения</h2>
-            <div class="filters__content">
-              <form class="offers-filter" action="#" name="offers-form" method="GET">
-                <ul class="offers__list">
-                  <li class="filters__line offers__item">
-                    <label class="offers-filter__label checkbox-label">
-                      <input class="offers-filter__input checkbox" type="checkbox" name="discount">
-                      <span class="offers-filter__checkbox input-bg fake-checkbox"></span>
-                      Со скидкой
-                    </label>
-                  </li>
-                  <li class="filters__line offers__item">
-                    <label class="offers-filter__label checkbox-label">
-                      <input class="offers-filter__input checkbox" type="checkbox" name="news">
-                      <span class="offers-filter__checkbox input-bg fake-checkbox"></span>
-                      Новинка
-                    </label>
-                  </li>
-                  <li class="filters__line offers__item">
-                    <label class="offers-filter__label checkbox-label">
-                      <input class="offers-filter__input checkbox" type="checkbox" name="hits">
-                      <span class="offers-filter__checkbox input-bg fake-checkbox"></span>
-                      Хит
-                    </label>
-                  </li>
-                </ul>
+            <form class="filters__form offers-filter" action="#" name="offers-form" method="GET">
+              <div class="filters__item offers-filter__item">
+                <label class="offers-filter__label checkbox-label">
+                  <input class="offers-filter__input checkbox" type="checkbox" name="discount">
+                  <span class="offers-filter__checkbox input-bg fake-checkbox"></span>
+                  Со скидкой
+                </label>
+              </div>
+              <div class="filters__item offers-filter__item">
+                <label class="offers-filter__label checkbox-label">
+                  <input class="offers-filter__input checkbox" type="checkbox" name="news">
+                  <span class="offers-filter__checkbox input-bg fake-checkbox"></span>
+                  Новинка
+                </label>
+              </div>
+              <div class="filters__item offers-filter__item">
+                <label class="offers-filter__label checkbox-label">
+                  <input class="offers-filter__input checkbox" type="checkbox" name="hits">
+                  <span class="offers-filter__checkbox input-bg fake-checkbox"></span>
+                  Хит
+                </label>
+              </div>
             </form>
-            </div>
-          </li>
-          <li class="filters__item">
+          </div>
+          <div class="filters__box">
             <h2 class="filters__subtitle subtitle">Цена</h2>
-            <div class="filters__content">
-              <form class="price-filter" action="#" name="price-form" method="GET">
-                <div class="price-filter__wrap">
-                  <label class="price-filter__label">от
-                    <input 
-                      class="price-filter__input price-filter__input--from input-bg input-text " 
-                      type="text" 
-                      name="price-from"
-                      id="price-from"
-                      value="100"
-                    >
-                    <span class="price-filter__currency">₴</span>
-                  </label>
-                  <label class="price-filter__label">до
-                    <input 
-                    class="price-filter__input price-filter__input--to input-bg input-text " 
+            <form class="filters__form price-filter" action="#" name="price-form" method="GET">
+              <div class="price-filter__wrap">
+                <label class="price-filter__label">от
+                  <input 
+                    class="price-filter__input price-filter__input--from input-bg input-text " 
                     type="text" 
-                    name="price-to"
-                    value="1000"
-                    >
-                    <span class="price-filter__currency">₴</span>
-                  </label>
-                </div>
-                <input 
-                  class="price-filter__range" 
-                  id="price"
-                  value=""
+                    name="price-from"
+                    id="price-from"
+                    value="100"
+                  >
+                  <span class="price-filter__currency">₴</span>
+                </label>
+                <label class="price-filter__label">до
+                  <input 
+                  class="price-filter__input price-filter__input--to input-bg input-text " 
                   type="text" 
-                  name="my_range" 
-                  data-min="50"
-                  data-max="1150"
-                  data-from="100"
-                  data-to="1000"
-                >
-              </form>
-            </div>
-          </li>
-        </ul>
+                  name="price-to"
+                  value="1000"
+                  >
+                  <span class="price-filter__currency">₴</span>
+                </label>
+              </div>
+              <input 
+                class="price-filter__range" 
+                id="price"
+                value=""
+                type="text" 
+                name="my_range" 
+                data-min="50"
+                data-max="1150"
+                data-from="100"
+                data-to="1000"
+              >
+            </form>
+          </div>
+        </div>
       </div>
       <div class="dishes__food-wrap">
         <ul class="dishes__food-list food-list">
@@ -260,33 +255,51 @@
           </li>          
         </ul>
         <div class="pagination">
-          <button class="pagination__nav pagination__btn pagination__nav--no-active input-bg" href="#">
+          <a class="pagination__nav pagination__btn pagination__nav--no-active input-bg" href="#" aria-label="Влево">
             <svg class="pagination__arrow pagination__arrow--prev">
               <use href="images/sprite.svg#nav-chevron-icon"></use>
             </svg>
-          </button>
+          </a>
           <ul class="pagination__list">
             <li class="pagination__item">
-              <button class="pagination__btn pagination__btn--active input-bg input-text" href="#">1</button>
+              <span class="pagination__btn pagination__btn--active input-bg input-text">1</span>
             </li>
             <li class="pagination__item">
-              <button class="pagination__btn input-bg input-text" href="#">2</button>
+              <a 
+                class="pagination__btn input-bg input-text"
+                href="#" 
+                aria-label="Еще странички"
+              >
+              2
+              </a>
             </li>
             <li class="pagination__item">
-              <button class="pagination__btn input-bg input-text" href="#">...</button>
+              <span class="pagination__btn input-bg input-text">...</span>
             </li>
             <li class="pagination__item">
-              <button class="pagination__btn input-bg input-text" href="#">9</button>
+              <a 
+                class="pagination__btn input-bg input-text"
+                href="#"
+                aria-label="Страничка №9"
+              >
+              9
+              </a>
             </li>
             <li class="pagination__item">
-              <button class="pagination__btn input-bg input-text" href="#">10</button>
+              <a 
+                class="pagination__btn input-bg input-text"
+                href="#"
+                aria-label="Страничка №10"
+              >
+              10
+              </a>
             </li>
           </ul>
-          <button class="pagination__nav pagination__btn input-bg" href="#">
+          <a class="pagination__nav pagination__btn input-bg" href="#" aria-label="Вправо">
             <svg class="pagination__arrow pagination__arrow--next">
               <use href="images/sprite.svg#nav-chevron-icon"></use>
             </svg>
-          </button>
+          </a>
         </div>
       </div>
     </div>

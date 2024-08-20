@@ -1,15 +1,16 @@
 <section class="popular section">
   <div class="container">
-    <h2 class="title popular__title">Популярные блюда</h2>
+    <h2 class="title popular__title">Популярные категории</h2>
     <div class="popular__swiper swiper">
-      <ul class="popular__categories-filter categories-filter swiper-wrapper"> 
-        <!-- уже перед отправкой заметила косячок, что вконце слайдера последняя кнопка не хочет показываться. Уже не стала все менять, попробовала, но не вышло( -->
+      <ul class="popular__categories-filter categories-filter swiper-wrapper">
         <li class="categories-filter__item swiper-slide">
           <button 
             class="popular__category-btn categories-filter__event" 
             type="button" 
             data-filter="all">
-              <span class="categories-filter__icon categories-filter__icon--burgers"></span>
+              <svg class="categories-filter__icon">
+                <use xlink:href="images/sprite.svg#burger-icon"></use>
+              </svg>              
             Бургеры
           </button>
         </li>
@@ -18,7 +19,9 @@
             class="popular__category-btn categories-filter__event" 
             type="button" 
             data-filter=".category-a">
-              <span class="categories-filter__icon categories-filter__icon--pizza"></span>
+              <svg class="categories-filter__icon">
+                <use xlink:href="images/sprite.svg#pizza-icon"></use>
+              </svg>              
             Пицца
           </button>
         </li>
@@ -27,7 +30,9 @@
             class="popular__category-btn categories-filter__event" 
             type="button" 
             data-filter=".category-b">
-              <span class="categories-filter__icon categories-filter__icon--sandwiches"></span>
+              <svg class="categories-filter__icon">
+                <use xlink:href="images/sprite.svg#sandwich-icon"></use>
+              </svg>              
             Сендвичи
           </button>
         </li>
@@ -36,7 +41,9 @@
             class="popular__category-btn categories-filter__event" 
             type="button" 
             data-filter=".category-c">
-              <span class="categories-filter__icon categories-filter__icon--asian-food"></span>
+              <svg class="categories-filter__icon">
+                <use xlink:href="images/sprite.svg#asian-icon"></use>
+              </svg>              
             Азиатская кухня
           </button>
         </li>
@@ -45,7 +52,9 @@
             class="popular__category-btn categories-filter__event" 
             type="button" 
             data-filter=".category-d">
-              <span class="categories-filter__icon categories-filter__icon--sets"></span>
+              <svg class="categories-filter__icon">
+                <use xlink:href="images/sprite.svg#sets-icon"></use>
+              </svg>              
             Cеты
           </button>
         </li>
@@ -54,7 +63,9 @@
             class="popular__category-btn categories-filter__event" 
             type="button" 
             data-filter=".category-e">
-              <span class="categories-filter__icon categories-filter__icon--sandwiches"></span>
+              <svg class="categories-filter__icon">
+                <use xlink:href="images/sprite.svg#sandwich-icon"></use>
+              </svg>              
             Сендвичи
           </button>
         </li>
@@ -63,7 +74,9 @@
             class="popular__category-btn categories-filter__event" 
             type="button" 
             data-filter=".category-f">
-              <span class="categories-filter__icon categories-filter__icon--asian-food"></span>
+              <svg class="categories-filter__icon">
+                <use xlink:href="images/sprite.svg#asian-icon"></use>
+              </svg>              
             Азиатская кухня
           </button>
         </li>
@@ -72,7 +85,9 @@
             class="popular__category-btn categories-filter__event" 
             type="button" 
             data-filter=".category-h">
-              <span class="categories-filter__icon categories-filter__icon--sets"></span>
+              <svg class="categories-filter__icon">
+                <use xlink:href="images/sprite.svg#sets-icon"></use>
+              </svg>              
             Cеты
           </button>
         </li>

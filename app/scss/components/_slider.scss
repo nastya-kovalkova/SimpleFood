@@ -20,15 +20,6 @@
       padding-left: 3px;
     }
 
-    &--active {
-      border: 3px solid $accent-color;
-      background-color: transparent;
-
-      .slider-nav__arrow {
-        fill: $accent-color;
-      }
-    }
-
     &:active {
       background-color: $action-color-2;
       border-color: transparent;
@@ -53,20 +44,19 @@
   }
 }
 
+.slick-disabled {
+  border: 3px solid $accent-color;
+  background-color: transparent;
+
+  .slider-nav__arrow {
+    fill: $accent-color;
+  }
+}
+
 .slider-dots {
   display: flex;
   justify-content: center;
   gap: 15px;
-
-  // @include mq("tablet") {
-  //   display: none;
-  // }
-
-  .slick-active {
-    button {
-      background-color: $accent-color;
-    }
-  }
 
   button {
     display: block;
@@ -77,5 +67,11 @@
     background-color: $decor-color-1;
     cursor: pointer;
     transition: box-shadow 0.3s linear, background-color 0.3s linear;
+  }
+}
+
+.slick-active {
+  button {
+    background-color: $accent-color;
   }
 }

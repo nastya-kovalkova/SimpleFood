@@ -22,11 +22,6 @@
     &:hover {
       box-shadow: $box-shadow, 0 5px 12px 0 rgba($accent-color, 0.2);
       background-color: transparent;
-
-      &::before {
-        filter: invert(57%) sepia(56%) saturate(4254%) hue-rotate(337deg)
-          brightness(102%) contrast(101%);
-      }
     }
   }
 
@@ -62,15 +57,15 @@
   }
 
   .popular {
-    &__category-btn {
+    &__category-btn,
+    &__category-btn.mixitup-control-active {
       &:hover {
         color: $accent-color;
         background-color: $action-color;
         box-shadow: $box-shadow;
 
         .categories-filter__icon {
-          filter: invert(48%) sepia(78%) saturate(1926%) hue-rotate(337deg)
-            brightness(103%) contrast(101%);
+          fill: $accent-color;
         }
       }
     }
@@ -166,6 +161,36 @@
     }
   }
 
+  .subscrip-form {
+    &__btn {
+      &:hover {
+        .subscrip-form__btn-icon {
+          fill: $accent-color;
+        }
+      }
+    }
+  }
+
+  .quantity-form {
+    &__action-btn {
+      &:hover {
+        box-shadow: inset $box-shadow;
+
+        .quantity-form__action-icon {
+          fill: $accent-color;
+        }
+      }
+    }
+
+    &__form-btn {
+      &:hover {
+        .quantity-form__btn-icon {
+          stroke: $accent-color;
+        }
+      }
+    }
+  }
+
   .slider-nav {
     &__btn {
       &:hover {
@@ -183,6 +208,7 @@
     button {
       &:hover {
         box-shadow: $shadow-size rgba($fill-color, 0.7);
+        background-color: $action-color-2;
       }
     }
   }

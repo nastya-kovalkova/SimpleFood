@@ -14,37 +14,11 @@
   }
 
   &__icon {
-    position: absolute;
-    left: 32px;
     width: 44px;
     height: 44px;
-    @include bg-image(contain);
-    filter: invert(22%) sepia(7%) saturate(2817%) hue-rotate(198deg)
-      brightness(87%) contrast(89%);
-    transition: filter 0.3s ease-in-out;
-
-    &--burgers {
-      background-image: url("../images/sprite.svg#burger-icon");
-    }
-
-    &--pizza {
-      background-image: url("../images/sprite.svg#pizza-icon");
-    }
-
-    &--sandwiches {
-      background-image: url("../images/sprite.svg#sandwich-icon");
-    }
-
-    &--asian-food {
-      background-image: url("../images/sprite.svg#asian-icon");
-    }
-
-    &--sets {
-      background-image: url("../images/sprite.svg#sets-icon");
-    }
+    transition: fill 0.3s linear;
 
     @include mq("phone") {
-      left: 16px;
       width: 20px;
       height: 20px;
     }

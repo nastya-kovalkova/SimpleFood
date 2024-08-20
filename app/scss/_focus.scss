@@ -91,6 +91,39 @@
   }
 }
 
+.subscrip-form {
+  &__btn {
+    &:focus {
+      .subscrip-form__btn-icon {
+        fill: $accent-color;
+      }
+    }
+  }
+}
+
+.quantity-form {
+  &__action-btn {
+    &--no-active {
+      &:focus {
+        box-shadow: none;
+        background-color: $accent-color;
+
+        .quantity-form__action-icon {
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  &__form-btn {
+    &:focus {
+      .quantity-form__btn-icon {
+        stroke: $accent-color;
+      }
+    }
+  }
+}
+
 .slider-nav {
   &__btn {
     &:focus {
